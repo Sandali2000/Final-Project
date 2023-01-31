@@ -2,24 +2,25 @@ import { Component, OnInit } from '@angular/core';
 import {OwlOptions} from "ngx-owl-carousel-o";
 
 @Component({
-  selector: 'app-recent-product',
-  templateUrl: './recent-product.component.html',
-  styleUrls: ['./recent-product.component.scss']
+  selector: 'app-feedback',
+  templateUrl: './feedback.component.html',
+  styleUrls: ['./feedback.component.scss']
 })
-export class RecentProductComponent implements OnInit {
+export class FeedbackComponent implements OnInit {
 
   constructor() { }
 
   ngOnInit(): void {
   }
-  customOptions: OwlOptions = {
+  customOption: OwlOptions = {
     loop: true,
-    autoplay:true,
-    autoplaySpeed:3000,
     mouseDrag: true,
-    touchDrag: false,
-    pullDrag: false,
-    dots:false,
+
+    touchDrag: true,
+    pullDrag: true,
+    dots: false,
+    autoplay:true,
+    autoplaySpeed:700,
     navSpeed: 700,
     navText: ['', ''],
     responsive: {
@@ -30,13 +31,12 @@ export class RecentProductComponent implements OnInit {
         items: 2
       },
       740: {
-        items: 3
+        items: 4
       },
       940: {
-        items: 4
+        items: 2
       }
     },
     nav: true
   }
-
 }

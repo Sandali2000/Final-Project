@@ -9,12 +9,18 @@ import { SearchbarComponent } from './searchbar/searchbar.component';
 import { SearchComponent } from './search/search.component';
 import { MainBodyComponent } from './main-body/main-body.component';
 import { MainBannerComponent } from './main-banner/main-banner.component';
-import {CarouselModule} from "./carousel/carousel.module";
+import {CarouselsModule} from "./carousel/carousels.module";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from "@angular/material/icon";
 import { FeatursComponent } from './featurs/featurs.component';
 import { AdvertisementComponent } from './advertisement/advertisement.component';
 import { RecentProductComponent } from './recent-product/recent-product.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { NewsletterComponent } from './newsletter/newsletter.component';
+import { FeaturedProductComponent } from './featured-product/featured-product.component';
+import { FeedbackComponent } from './feedback/feedback.component';
+import { FooterComponent } from './footer/footer.component';
+
 
 
 @NgModule({
@@ -30,14 +36,21 @@ import { RecentProductComponent } from './recent-product/recent-product.componen
     FeatursComponent,
     AdvertisementComponent,
     RecentProductComponent,
+    NewsletterComponent,
+    FeaturedProductComponent,
+    FeedbackComponent,
+    FooterComponent,
+
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CarouselModule,
+    CarouselsModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
