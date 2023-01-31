@@ -10,18 +10,24 @@
 
       <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
         <div class="navbar-nav mr-auto">
-          <a routerLink="/home" routerLinkActive="active" class="nav-item nav-link" >Home</a>
+          <a routerLink="/" routerLinkActive="" class=" nav-link" >Home</a>
 
-          <a routerLink="/product" routerLinkActive="active" class="nav-item nav-link">Products</a>
-          <a routerLink="/product-detail" routerLinkActive="active" class="nav-item nav-link">Product Detail</a>
-          <a routerLink="/cart" routerLinkActive="active"  class="nav-item nav-link">Cart</a>
-          <a routerLink="/check-out" routerLinkActive="active" class="nav-item nav-link">Checkout</a>
-          <a routerLink="/my-account" routerLinkActive="active" class="nav-item nav-link">My Account</a>
-          <a routerLink="/add-product" routerLinkActive="active" class="nav-item nav-link"> Account</a>
+          <a routerLink="/product" routerLinkActive="active" class=" nav-link">Products</a>
+          <a routerLink="/product-detail" routerLinkActive="active" class=" nav-link">Product Detail</a>
+          <a routerLink="/cart" routerLinkActive="active"  class=" nav-link">Cart</a>
+          <a routerLink="/check-out" routerLinkActive="active" class=" nav-link">Checkout</a>
+          <a routerLink="/my-account" routerLinkActive="active" class=" nav-link">My Account</a>
+          <a routerLink="/add-product" routerLinkActive="active" class=" nav-link"> Account</a>
         </div>
         <div class="navbar-nav ml-auto">
-          <div class="nav-item dropdown">
-            <a routerLink="/login" routerLinkActive="active" class="nav-item nav-link"> Log In</a>
+          <div >
+            <a [matMenuTriggerFor]="menu" class=" nav-link" routerLinkActive="active"><mat-icon >account_circle</mat-icon></a>
+            <mat-menu #menu="matMenu" style="background-color: #3f2b07">
+              <a class="button"  mat-menu-item >Customers</a>
+              <a class="button" routerLink="/employee-login" routerLinkActive="active"  mat-menu-item>Employee</a>
+              <a class="button"  routerLink="/admin-login" routerLinkActive="active" mat-menu-item>Admin</a>
+            </mat-menu>
+
           </div>
         </div>
       </div>

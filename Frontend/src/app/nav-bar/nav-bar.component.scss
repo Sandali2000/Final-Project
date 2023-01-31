@@ -18,11 +18,11 @@
 
 .nav .navbar {
   height: 100%;
-  padding: 8px;
+  padding: 2px;
 }
 
 .nav .dropdown-menu {
-  margin-top: 4px;
+  margin-top: 3px;
   border: 0;
   border-radius: 0;
   background: #3f2b07;
@@ -72,5 +72,23 @@
   .nav .dropdown-menu {
     box-shadow: none;
   }
+}
+
+
+button{
+  position: relative;
+  top: -5px;
+  bottom: 0;
+  background-color: #3f2b07;
+  border: 1px solid white;
+  color: #ffffff;
+  font-size: 14px;
+  text-transform: uppercase;
+
+}
+.button:hover{
+  color: #edcc52;
+  background-color: #3f2b07;
+  cursor: pointer;
 }
 
