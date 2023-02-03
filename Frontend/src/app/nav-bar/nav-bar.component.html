@@ -17,13 +17,13 @@
           <a routerLink="/cart" routerLinkActive="active"  class=" nav-link">Cart</a>
           <a routerLink="/check-out" routerLinkActive="active" class=" nav-link">Checkout</a>
           <a routerLink="/my-account" routerLinkActive="active" class=" nav-link">My Account</a>
-          <a routerLink="/add-product" routerLinkActive="active" class=" nav-link"> Account</a>
+          <a routerLink="/contact-us" routerLinkActive="active" class=" nav-link"> Contact Us</a>
         </div>
         <div class="navbar-nav ml-auto">
           <div >
-            <a [matMenuTriggerFor]="menu" class=" nav-link" routerLinkActive="active"><mat-icon >account_circle</mat-icon></a>
+            <a [matMenuTriggerFor]="menu" class=" nav-link" routerLinkActive="active"><mat-icon  >account_circle</mat-icon></a>
             <mat-menu #menu="matMenu" style="background-color: #3f2b07">
-              <a class="button"  mat-menu-item >Customers</a>
+              <a class="button"  mat-menu-item (click)="openDialog()" >Customers</a>
               <a class="button" routerLink="/employee-login" routerLinkActive="active"  mat-menu-item>Employee</a>
               <a class="button"  routerLink="/admin-login" routerLinkActive="active" mat-menu-item>Admin</a>
             </mat-menu>

@@ -33,10 +33,16 @@ import {MatListModule} from "@angular/material/list";
 import { EmployeeHeaderComponent } from './employee/employee-header/employee-header.component';
 import {MatMenuModule} from "@angular/material/menu";
 import {MatToolbarModule} from "@angular/material/toolbar";
-import { AgreementFormComponent } from './agreement-form/agreement-form.component';
+import { AgreementFormComponent } from './employee/agreement-form/agreement-form.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
-
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {MatDialogModule} from '@angular/material/dialog';
+import { DialogComponent } from './customer/dialog/dialog.component';
+import { CustomerComponent } from './customer/customer.component';
+import { DialogLoginComponent } from './customer/dialog-login/dialog-login.component';
+import { ContactUsComponent } from './home-page/contact-us/contact-us.component';
 
 
 @NgModule({
@@ -68,6 +74,10 @@ import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
     AgreementFormComponent,
     AdminComponent,
     AdminLoginComponent,
+    DialogComponent,
+    CustomerComponent,
+    DialogLoginComponent,
+    ContactUsComponent,
 
 
   ],
@@ -82,6 +92,9 @@ import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
     MatListModule,
     MatMenuModule,
     MatToolbarModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDialogModule
 
   ],
   providers: [],
