@@ -9,10 +9,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class RequestSaveItemDTO {
+
     private String itemName;
     private String shopName;
-    private String price;
+    private double price;
     private MeasurementUnitType measureType;
-    private String quantity;
+    private int quantity;
     private String description;
 }

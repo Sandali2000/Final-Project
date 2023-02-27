@@ -11,12 +11,12 @@ import lombok.NoArgsConstructor;
 
 public class ItemDTO {
 
-    private Long itemId;
+    private int itemId;
     private String itemName;
     private String shopName;
-    private String price;
+    private double price;
     private MeasurementUnitType measureType;
-    private String quantity;
+    private int quantity;
     private String description;
     private boolean activeState;
 }

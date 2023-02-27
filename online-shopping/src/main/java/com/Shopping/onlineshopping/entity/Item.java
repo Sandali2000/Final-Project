@@ -17,7 +17,7 @@ public class Item {
     @Id
     @Column(name = "item_id", length = 45)
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long itemId;
+    private int itemId;
 
     @Column(name = "itemName", length = 45, nullable = false)
     private String itemName;
@@ -26,19 +26,19 @@ public class Item {
     private String shopName;
 
     @Column (name = "price", nullable = false)
-    private String price;
+    private double price;
 
     @Enumerated (EnumType.STRING)
     @Column (name = "measureType")
     private MeasurementUnitType measureType;
 
     @Column (name = "quantity", nullable = false)
-    private String quantity;
+    private int quantity;
 
     @Column (name = "description", nullable = false)
     private String description;
 
-    @Column(name = "active_state",columnDefinition = "TINYINT default 1")
+    @Column(name = "active_state",columnDefinition = "TINYINT default 0")
     private boolean activeState;
 
 }
