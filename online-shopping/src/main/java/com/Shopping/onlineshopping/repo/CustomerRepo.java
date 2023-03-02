@@ -15,4 +15,6 @@ import java.util.List;
 public interface CustomerRepo extends JpaRepository<Customer, Integer> {
 
     List<Customer> findAllByActiveStateEquals (boolean activeState);
+
+    Customer findByCustomerEmailAndCustomerPassword(String email, String password);
 }

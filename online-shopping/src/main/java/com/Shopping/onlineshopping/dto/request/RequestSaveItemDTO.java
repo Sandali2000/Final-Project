@@ -16,4 +16,5 @@ public class RequestSaveItemDTO {
     private MeasurementUnitType measureType;
     private int quantity;
     private String description;
+    private byte[] image;
 }

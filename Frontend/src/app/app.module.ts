@@ -2,102 +2,94 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './employee/login/login.component';
-import { HomeComponent } from './home-page/home/home.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { SearchbarComponent } from './home-page/searchbar/searchbar.component';
-import { SearchComponent } from './home-page/search/search.component';
-import { MainBodyComponent } from './home-page/main-body.component';
-import { MainBannerComponent } from './home-page/main-banner/main-banner.component';
-import {CarouselsModule} from "./carousel/carousels.module";
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatIconModule} from "@angular/material/icon";
-import { FeatursComponent } from './home-page/featurs/featurs.component';
-import { AdvertisementComponent } from './home-page/advertisement/advertisement.component';
-import { RecentProductComponent } from './home-page/recent-product/recent-product.component';
-import { CarouselModule } from 'ngx-owl-carousel-o';
-import { NewsletterComponent } from './home-page/newsletter/newsletter.component';
-import { FeaturedProductComponent } from './home-page/featured-product/featured-product.component';
-import { FeedbackComponent } from './home-page/feedback/feedback.component';
 import { FooterComponent } from './footer/footer.component';
-import { ProductComponent } from './product-page/product/product.component';
-import { ProductPageComponent } from './product-page/product-page.component';
-import { BreadcrumbComponent } from './product-page/breadcrumb/breadcrumb.component';
-import { ProductListComponent } from './product-page/product-list/product-list.component';
-import { SidebarComponent } from './product-page/sidebar/sidebar.component';
-import { EmployeeHomeComponent } from './employee/employee-home/employee-home.component';
-import { EmployeeComponent } from './employee/employee.component';
-import {MatSidenavModule} from "@angular/material/sidenav";
-import { EmployeeNavbarComponent } from './employee/employee-navbar/employee-navbar.component';
-import {MatListModule} from "@angular/material/list";
-import { EmployeeHeaderComponent } from './employee/employee-header/employee-header.component';
-import {MatMenuModule} from "@angular/material/menu";
-import {MatToolbarModule} from "@angular/material/toolbar";
-import { AgreementFormComponent } from './employee/agreement-form/agreement-form.component';
-import { AdminComponent } from './admin/admin.component';
-import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
+import {FormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
+import {ReactiveFormsModule} from "@angular/forms";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatListModule } from '@angular/material/list';
+import {MatButtonModule} from "@angular/material/button";
+import {MatPaginatorModule} from "@angular/material/paginator";
+import {MatTableModule} from "@angular/material/table";
+import {NgxPaginationModule} from "ngx-pagination";
+import {MatDialogModule} from "@angular/material/dialog";
+import {Ng2SearchPipeModule} from "ng2-search-filter";
+import { CustomerLoginComponent } from './Customer/customer-login/customer-login.component';
+import { NavbarComponent } from './HomePage/navbar/navbar.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
-import {MatDialogModule} from '@angular/material/dialog';
-import { DialogComponent } from './customer/dialog/dialog.component';
-import { CustomerComponent } from './customer/customer.component';
-import { DialogLoginComponent } from './customer/dialog-login/dialog-login.component';
-import { ContactUsComponent } from './home-page/contact-us/contact-us.component';
-
+import { HomePageComponent } from './HomePage/home-page/home-page.component';
+import { SearchBarComponent } from './HomePage/search-bar/search-bar.component';
+import { SearchComponent } from './HomePage/search/search.component';
+import { MainBarComponent } from './HomePage/main-bar/main-bar.component';
+import { FeatursComponent } from './HomePage/featurs/featurs.component';
+import { AdvertisementComponent } from './HomePage/advertisement/advertisement.component';
+import {CdkListboxModule} from "@angular/cdk/listbox";
+import {RouterModule} from "@angular/router";
+import {CarouselModule} from "ngx-owl-carousel-o";
+import { ResuntProductComponent } from './HomePage/resunt-product/resunt-product.component';
+import { NewsletterComponent } from './HomePage/newsletter/newsletter.component';
+import { FeaturedProductComponent } from './HomePage/featured-product/featured-product.component';
+import { FeedbackComponent } from './HomePage/feedback/feedback.component';
+import {CarouselsModule} from "./HomePage/carousel/carousels.module";
+import { LoginCustomerComponent } from './login-customer/login-customer.component';
+import { ProductComponent } from './product/product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    HomeComponent,
-    NavBarComponent,
-    SearchbarComponent,
+    FooterComponent,
+    CustomerLoginComponent,
+    NavbarComponent,
+    HomePageComponent,
+    SearchBarComponent,
     SearchComponent,
-    MainBodyComponent,
-    MainBannerComponent,
+    MainBarComponent,
     FeatursComponent,
     AdvertisementComponent,
-    RecentProductComponent,
+    ResuntProductComponent,
     NewsletterComponent,
     FeaturedProductComponent,
     FeedbackComponent,
-    FooterComponent,
+    LoginCustomerComponent,
     ProductComponent,
-    ProductPageComponent,
-    BreadcrumbComponent,
-    ProductListComponent,
-    SidebarComponent,
-    EmployeeHomeComponent,
-    EmployeeComponent,
-    EmployeeNavbarComponent,
-    EmployeeHeaderComponent,
-    AgreementFormComponent,
-    AdminComponent,
-    AdminLoginComponent,
-    DialogComponent,
-    CustomerComponent,
-    DialogLoginComponent,
-    ContactUsComponent,
-
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CarouselModule,
-    CarouselsModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatIconModule,
     MatSidenavModule,
-    MatListModule,
-    MatMenuModule,
     MatToolbarModule,
+    MatMenuModule,
+    MatIconModule,
+    MatDividerModule,
+    MatListModule,
+    MatButtonModule,
+    MatPaginatorModule,
+    MatTableModule,
+    NgxPaginationModule,
+    MatDialogModule,
+    Ng2SearchPipeModule,
     MatFormFieldModule,
     MatInputModule,
-    MatDialogModule
+    CdkListboxModule,
+    RouterModule,
+    CarouselModule,
+    CarouselsModule
 
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+
 })
-export class AppModule { }
+
+export class AppModule{ }

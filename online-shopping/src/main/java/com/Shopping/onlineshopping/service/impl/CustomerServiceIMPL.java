@@ -25,12 +25,12 @@ public class CustomerServiceIMPL implements CustomerService {
 
 
     @Override
-    public String saveCustomer(RequestSaveCustomerDTO requestSaveCustomerDTO){
+    public RequestSaveCustomerDTO saveCustomer(RequestSaveCustomerDTO requestSaveCustomerDTO){
         Customer customer = modelMapper.map(requestSaveCustomerDTO,Customer.class);
         customer.isActiveState();
         if(!customerRepo.existsById(customer.getCustomerId())){
             customerRepo.save(customer);
-            return "save";
+            return requestSaveCustomerDTO ;
         }else {
 
             return null;
@@ -120,6 +120,18 @@ public class CustomerServiceIMPL implements CustomerService {
             customerDtoList.add(customerDto);
         }
         return customerDtoList;
+    }
+
+    @Override
+    public CustomerDto login(String email, String password) {
+        Customer customer= customerRepo.findByCustomerEmailAndCustomerPassword(email,password);
+        if(customer.equals(customer)){
+            CustomerDto customerDto= modelMapper.map(customer,CustomerDto.class);
+            return customerDto;
+        }else {
+            throw new RuntimeException("Error");
+        }
+
     }
 
 

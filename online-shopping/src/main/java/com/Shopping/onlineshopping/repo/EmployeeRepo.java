@@ -12,4 +12,5 @@ import javax.transaction.Transactional;
 @Transactional
 public interface EmployeeRepo extends JpaRepository<Employee,Integer> {
 
+    Employee findAllByEmployeeNameEquals(String name);
 }

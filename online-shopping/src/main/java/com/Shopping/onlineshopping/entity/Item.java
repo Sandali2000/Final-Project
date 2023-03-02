@@ -38,6 +38,9 @@ public class Item {
     @Column (name = "description", nullable = false)
     private String description;
 
+    @Column(name = "image", nullable = false)
+    private  byte[]  image;
+
     @Column(name = "active_state",columnDefinition = "TINYINT default 0")
     private boolean activeState;
 

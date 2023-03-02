@@ -10,7 +10,7 @@ import java.util.List;
 public interface CustomerService {
 
 
-  String saveCustomer(RequestSaveCustomerDTO requestSaveCustomerDTO);
+  RequestSaveCustomerDTO saveCustomer(RequestSaveCustomerDTO requestSaveCustomerDTO);
 
   CustomerDto getCustomer(int customerId);
 
@@ -25,4 +25,6 @@ public interface CustomerService {
   String deleteCustomer(int customerId);
 
   List<CustomerDto> getAllCustomerUseActiveState(boolean activeState);
+
+  CustomerDto login(String email, String password);
 }

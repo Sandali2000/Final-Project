@@ -23,9 +23,9 @@ public class CustomerController {
     private CustomerService CustomerService;
 
     @PostMapping (path = "/save")
-    public String saveCustomer( @RequestBody RequestSaveCustomerDTO requestSaveCustomerDTO){
-     return CustomerService.saveCustomer(requestSaveCustomerDTO);
-
+    public RequestSaveCustomerDTO saveCustomer( @RequestBody RequestSaveCustomerDTO requestSaveCustomerDTO){
+      CustomerService.saveCustomer(requestSaveCustomerDTO);
+        return requestSaveCustomerDTO;
     }
 
     @GetMapping(path = "/getCustomer-by-id", params = "id")
@@ -62,6 +62,13 @@ public class CustomerController {
     public List<CustomerDto> getAllCustomersByUsingStatus(@RequestParam (value = "status") boolean activeState){
         List<CustomerDto> allCustomers = CustomerService.getAllCustomerUseActiveState(activeState);
         return allCustomers;
+    }
+
+    @GetMapping(path = "/login", params = "email")
+    public CustomerDto login(@RequestParam (value = "email") String email,
+                             @RequestParam (value = "password")String password){
+       CustomerDto customerDto= CustomerService.login(email,password);
+        return customerDto;
     }
 
 

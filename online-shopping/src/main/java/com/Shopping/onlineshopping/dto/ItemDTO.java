@@ -18,5 +18,6 @@ public class ItemDTO {
     private MeasurementUnitType measureType;
     private int quantity;
     private String description;
+    private byte[] image;
     private boolean activeState;
 }
