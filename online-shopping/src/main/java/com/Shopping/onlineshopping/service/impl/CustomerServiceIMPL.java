@@ -1,13 +1,20 @@
 package com.Shopping.onlineshopping.service.impl;
 
+import com.Shopping.onlineshopping.Util.mappers.CustomerMapper;
 import com.Shopping.onlineshopping.dto.CustomerDto;
+import com.Shopping.onlineshopping.dto.ItemDTO;
+import com.Shopping.onlineshopping.dto.paginate.PaginateResponseCustomerDTO;
 import com.Shopping.onlineshopping.dto.request.RequestSaveCustomerDTO;
 import com.Shopping.onlineshopping.dto.request.UpdateCustomerDTO;
 import com.Shopping.onlineshopping.entity.Customer;
+import com.Shopping.onlineshopping.exception.NotFoundException;
 import com.Shopping.onlineshopping.repo.CustomerRepo;
 import com.Shopping.onlineshopping.service.CustomerService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -22,6 +29,9 @@ public class CustomerServiceIMPL implements CustomerService {
 
     @Autowired
     private ModelMapper modelMapper;
+
+    @Autowired
+    private CustomerMapper customerMapper;
 
 
     @Override
@@ -88,8 +98,9 @@ public class CustomerServiceIMPL implements CustomerService {
     @Override
     public List<CustomerDto> getAllCustomer() {
         List<Customer> getAllCustomer = customerRepo.findAll();
-        List<CustomerDto> customerDtoList= new ArrayList<>();
-        return null;
+
+        List<CustomerDto> customerDtoList= modelMapper.map(getAllCustomer,new TypeToken<List<CustomerDto>>(){}.getType());
+        return customerDtoList;
     }
 
     @Override
@@ -129,9 +140,21 @@ public class CustomerServiceIMPL implements CustomerService {
             CustomerDto customerDto= modelMapper.map(customer,CustomerDto.class);
             return customerDto;
         }else {
-            throw new RuntimeException("Error");
+            throw new NotFoundException( "Not Found");
         }
 
+    }
+
+    @Override
+    public PaginateResponseCustomerDTO getAllCustomerByPaginate(int page, int size) {
+        Page<Customer> customer = customerRepo.findAll(PageRequest.of(page ,size));
+
+        PaginateResponseCustomerDTO paginateResponseCustomerDTO=new  PaginateResponseCustomerDTO(
+                customerMapper.pageToDto(customer),
+                customerRepo.count()
+
+        );
+        return paginateResponseCustomerDTO;
     }
 
 
