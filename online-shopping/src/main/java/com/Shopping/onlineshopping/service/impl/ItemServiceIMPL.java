@@ -1,6 +1,7 @@
 package com.Shopping.onlineshopping.service.impl;
 
 import com.Shopping.onlineshopping.Util.mappers.ItemMapper;
+import com.Shopping.onlineshopping.dto.CustomerDto;
 import com.Shopping.onlineshopping.dto.ItemDTO;
 import com.Shopping.onlineshopping.dto.request.RequestSaveItemDTO;
 import com.Shopping.onlineshopping.entity.Item;
@@ -67,6 +68,14 @@ public class ItemServiceIMPL implements ItemService {
         }
 
         
+    }
+
+    @Override
+    public List<ItemDTO> getAllItem() {
+        List<Item> items = itemRepo.findAll();
+
+        List<ItemDTO> itemDTOList = modelMapper.map(items,new TypeToken<List<ItemDTO>>(){}.getType());
+        return itemDTOList;
     }
 
 

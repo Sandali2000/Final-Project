@@ -39,7 +39,7 @@ public class Item {
     private String description;
 
     @Column(name = "image", nullable = false)
-    private  byte[]  image;
+    private  String  image;
 
     @Column(name = "active_state",columnDefinition = "TINYINT default 0")
     private boolean activeState;

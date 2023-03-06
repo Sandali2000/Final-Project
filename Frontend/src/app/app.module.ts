@@ -38,7 +38,14 @@ import { FeaturedProductComponent } from './HomePage/featured-product/featured-p
 import { FeedbackComponent } from './HomePage/feedback/feedback.component';
 import {CarouselsModule} from "./HomePage/carousel/carousels.module";
 import { LoginCustomerComponent } from './login-customer/login-customer.component';
-import { ProductComponent } from './product/product.component';
+import { ProductPageComponent } from './ProductPage/product-page/product-page.component';
+import { BreadcrumbComponent } from './ProductPage/breadcrumb/breadcrumb.component';
+import { ProductComponent } from './ProductPage/product/product.component';
+import { EmployeeLoginComponent } from './Employee/employee-login/employee-login.component';
+import { AdminLoginComponent } from './Admin/admin-login/admin-login.component';
+import { AdminHeaderComponent } from './Admin/admin-header/admin-header.component';
+import { AdminNavComponent } from './Admin/admin-nav/admin-nav.component';
+import { AdminDashboardComponent } from './Admin/admin-dashboard/admin-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +64,14 @@ import { ProductComponent } from './product/product.component';
     FeaturedProductComponent,
     FeedbackComponent,
     LoginCustomerComponent,
+    ProductPageComponent,
+    BreadcrumbComponent,
     ProductComponent,
+    EmployeeLoginComponent,
+    AdminLoginComponent,
+    AdminHeaderComponent,
+    AdminNavComponent,
+    AdminDashboardComponent,
 
   ],
   imports: [

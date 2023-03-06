@@ -1,9 +1,12 @@
 package com.Shopping.onlineshopping.controller;
 
+import com.Shopping.onlineshopping.Util.StandardResponse;
 import com.Shopping.onlineshopping.dto.ItemDTO;
 import com.Shopping.onlineshopping.dto.request.RequestSaveItemDTO;
 import com.Shopping.onlineshopping.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -30,6 +33,14 @@ public class ItemController {
     public List<ItemDTO> getItemByNameNotActive(@RequestParam (value = "name") String name){
         List<ItemDTO> getItem = itemService.getNotActiveItemByName(name);
         return getItem;
+    }
+
+    @GetMapping(path = "getAllItem")
+    public List<ItemDTO> getAllItem()
+    {
+        List<ItemDTO> itemDTOList = itemService.getAllItem();
+        return itemDTOList;
+
     }
 
 }

@@ -13,4 +13,6 @@ public interface ItemService {
     List<ItemDTO> getItemByName(String name);
 
     List<ItemDTO> getNotActiveItemByName(String name);
+
+    List<ItemDTO> getAllItem();
 }
