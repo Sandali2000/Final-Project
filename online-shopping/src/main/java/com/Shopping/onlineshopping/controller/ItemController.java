@@ -3,6 +3,7 @@ package com.Shopping.onlineshopping.controller;
 import com.Shopping.onlineshopping.Util.StandardResponse;
 import com.Shopping.onlineshopping.dto.ItemDTO;
 import com.Shopping.onlineshopping.dto.request.RequestSaveItemDTO;
+import com.Shopping.onlineshopping.entity.Item;
 import com.Shopping.onlineshopping.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -41,6 +42,13 @@ public class ItemController {
         List<ItemDTO> itemDTOList = itemService.getAllItem();
         return itemDTOList;
 
+    }
+    @GetMapping(path = "getById", params = "id")
+    public ItemDTO getById(@RequestParam (value = "id") int id)
+    {
+        ItemDTO itemDTO = itemService.getById(id);
+
+        return itemDTO;
     }
 
 }

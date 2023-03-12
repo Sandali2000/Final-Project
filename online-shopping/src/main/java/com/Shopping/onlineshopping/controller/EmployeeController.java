@@ -33,11 +33,9 @@ public class EmployeeController {
     }
 
     @GetMapping(path = "/getAllEmployee1")
-    public ResponseEntity<StandardResponse> getAllCustomer() {
+    public List<EmployeeDto> getAllCustomer() {
         List<EmployeeDto> allEmployee = employeeService.gelAllEmployee();
-        return new ResponseEntity<StandardResponse>(
-                new StandardResponse(201, "success", allEmployee),
-                HttpStatus.OK);
+        return allEmployee;
 
     }
 

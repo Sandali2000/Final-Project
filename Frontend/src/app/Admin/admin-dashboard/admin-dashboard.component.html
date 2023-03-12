@@ -1,9 +1,9 @@
-<mat-drawer-container>
+<mat-drawer-container style="margin-top: -50px">
   <mat-drawer mode="side" [opened]="sideBarOpen">
     <app-admin-nav></app-admin-nav>
   </mat-drawer>
   <mat-drawer-content>
-    <app-admin-header (toggleSidebarForMe)="sideBarToggler()"></app-admin-header>
+    <app-admin-header (toggleSidebarForMe)="sideBarToggler()" ></app-admin-header>
 
     <div class="container-fluid page">
       <div class="d-flex page__box p-3 mt-2">Student List</div>

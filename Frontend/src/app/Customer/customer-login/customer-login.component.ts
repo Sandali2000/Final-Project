@@ -3,6 +3,8 @@ import {FormBuilder, FormControl, Validators} from "@angular/forms";
 import {MatDialog} from "@angular/material/dialog";
 import {Router} from "@angular/router";
 import {CustomerService} from "../../services/customer/customer.service";
+import {LoginComponent} from "../login/login.component";
+
 @Component({
   selector: 'app-customer-login',
   templateUrl: './customer-login.component.html',
@@ -24,6 +26,14 @@ addCustomer:any;
 
 
   ngOnInit(): void {
+  }
+
+  openDialog1() {
+    this.dialog.open(LoginComponent, {
+      width:'450px',
+      height:'530px'
+
+    });
   }
 
   onSubmit() {

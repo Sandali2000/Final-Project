@@ -11,6 +11,8 @@ import org.hibernate.annotations.TypeDefs;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Set;
+
 @TypeDefs({
         @TypeDef(name = "json", typeClass = JsonType.class)
 })
@@ -21,6 +23,8 @@ import java.util.ArrayList;
 @Entity
 @Table(name = "customer")
 public class Customer {
+
+
     @Id
     @Column(name = "customer_id", length = 45)
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -37,5 +41,7 @@ public class Customer {
 
     @Column(name = "active_state",columnDefinition = "TINYINT default 0")
     private boolean activeState;
+
+
 
 }

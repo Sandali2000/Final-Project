@@ -1,7 +1,6 @@
 package com.Shopping.onlineshopping.service.impl;
 
 import com.Shopping.onlineshopping.Util.mappers.ItemMapper;
-import com.Shopping.onlineshopping.dto.CustomerDto;
 import com.Shopping.onlineshopping.dto.ItemDTO;
 import com.Shopping.onlineshopping.dto.request.RequestSaveItemDTO;
 import com.Shopping.onlineshopping.entity.Item;
@@ -14,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ItemServiceIMPL implements ItemService {
@@ -76,6 +76,15 @@ public class ItemServiceIMPL implements ItemService {
 
         List<ItemDTO> itemDTOList = modelMapper.map(items,new TypeToken<List<ItemDTO>>(){}.getType());
         return itemDTOList;
+    }
+
+    @Override
+    public ItemDTO getById(int id) {
+
+            Item item = itemRepo.getById(id);
+            ItemDTO itemDTO = modelMapper.map(item, ItemDTO.class);
+            return itemDTO;
+
     }
 
 

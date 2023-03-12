@@ -11,4 +11,12 @@ export class CustomerService {
   addCustomer(customer: any) {
     return this.http.post('http://localhost:4000/api/v1/customer/save', customer);
   }
+
+  getAllCustomer(){
+    return this.http.get('http://localhost:4000/api/v1/customer/get-all-customer');
+  }
+
+  currentUser(){
+
+  }
 }

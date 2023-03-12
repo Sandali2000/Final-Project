@@ -46,6 +46,14 @@ import { AdminLoginComponent } from './Admin/admin-login/admin-login.component';
 import { AdminHeaderComponent } from './Admin/admin-header/admin-header.component';
 import { AdminNavComponent } from './Admin/admin-nav/admin-nav.component';
 import { AdminDashboardComponent } from './Admin/admin-dashboard/admin-dashboard.component';
+import { LoginComponent } from './Customer/login/login.component';
+import { ProductDetailsComponent } from './ProductDetails/product-details/product-details.component';
+import { ProductDisComponent } from './ProductDetails/product-dis/product-dis.component';
+import { MapComponent } from './map/map.component';
+import { ChackOutPageComponent } from './chack-out-page/chack-out-page.component';
+import { EmployeeListComponent } from './Admin/employee-list/employee-list.component';
+import { CustomerListComponent } from './Admin/customer-list/customer-list.component';
+import { ItemListComponent } from './Admin/item-list/item-list.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +80,14 @@ import { AdminDashboardComponent } from './Admin/admin-dashboard/admin-dashboard
     AdminHeaderComponent,
     AdminNavComponent,
     AdminDashboardComponent,
+    LoginComponent,
+    ProductDetailsComponent,
+    ProductDisComponent,
+    MapComponent,
+    ChackOutPageComponent,
+    EmployeeListComponent,
+    CustomerListComponent,
+    ItemListComponent,
 
   ],
   imports: [

@@ -11,6 +11,7 @@ import org.hibernate.annotations.TypeDefs;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -50,7 +51,8 @@ public class Employee {
     private String businessName;
 
 
-
     @Column(name = "active_state",columnDefinition = "TINYINT default 0")
     private boolean activeState;
+
+
 }
