@@ -13,21 +13,24 @@ public interface CustomerService {
 
   RequestSaveCustomerDTO saveCustomer(RequestSaveCustomerDTO requestSaveCustomerDTO);
 
-  CustomerDto getCustomer(int customerId);
+  CustomerDto getCustomer(long customerId);
 
-  String updateCustomer(int customerId);
+  String updateCustomer(long customerId);
 
-  String  update(UpdateCustomerDTO updateCustomerDTO);
+
 
 
 
   List<CustomerDto> getAllCustomer();
 
-  String deleteCustomer(int customerId);
+  String deleteCustomer(long customerId);
 
   List<CustomerDto> getAllCustomerUseActiveState(boolean activeState);
 
   CustomerDto login(String email, String password);
 
   PaginateResponseCustomerDTO getAllCustomerByPaginate(int page, int size);
+
+
+  String updates(UpdateCustomerDTO updateCustomerDTO);
 }

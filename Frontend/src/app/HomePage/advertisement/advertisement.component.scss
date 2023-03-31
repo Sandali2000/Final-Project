@@ -45,7 +45,7 @@
   height: 100%;
   display: flex;
   align-items: center;
-  background: rgba(208, 162, 104, 0.51);
+  background: rgba(97, 123, 255, 0.39);
   transition: all 0.3s;
   opacity: 0;
 }
@@ -80,11 +80,11 @@
 button{
   border-radius: 10px;
   font-size: 16px;
-  border-color: #3f2b07;
-  background-color: #493712;
+  border-color: rgb(79, 79, 210);
+  background-color: #040444;
   color: #f3f6ff;
 }
 button:hover{
   background-color: rgba(252, 252, 255, 0.94);
-  color: #3f2b07;
+  color: rgba(5, 5, 37, 0.76);
 }

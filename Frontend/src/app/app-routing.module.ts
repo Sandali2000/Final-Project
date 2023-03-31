@@ -12,6 +12,9 @@ import {AuthGuard} from "./auth/guards/auth.guard";
 import {EmployeeListComponent} from "./Admin/employee-list/employee-list.component";
 import {CustomerListComponent} from "./Admin/customer-list/customer-list.component";
 import {ItemListComponent} from "./Admin/item-list/item-list.component";
+import {EmployeeDashboardComponent} from "./Employee/employee-dashboard/employee-dashboard.component";
+import {AddItemComponent} from "./Employee/add-item/add-item.component";
+import {AddEmployeeComponent} from "./Employee/add-employee/add-employee.component";
 
 const routes: Routes = [
   {path:'',component:HomePageComponent},
@@ -21,10 +24,13 @@ const routes: Routes = [
   {path:'adminLogin',component:AdminLoginComponent},
   {path:'adminDashboard',component:AdminDashboardComponent},
   {path:'check',component:ChackOutPageComponent, canActivate:[AuthGuard]},
-  {path:'productDetail/:id',component:ProductDetailsComponent},
+  {path:'productDetail/:itemId',component:ProductDetailsComponent},
   {path:'EmployeeList',component:EmployeeListComponent},
   {path:'CustomerList',component:CustomerListComponent},
   {path:'ItemList',component:ItemListComponent},
+  {path:'EmployeeDashboard',component:EmployeeDashboardComponent},
+  {path:'AddItem',component:AddItemComponent},
+  {path:'AddEmployee',component:AddEmployeeComponent},
 ];
 
 @NgModule({

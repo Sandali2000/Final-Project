@@ -28,7 +28,7 @@ public class Customer {
     @Id
     @Column(name = "customer_id", length = 45)
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int customerId;
+    private long customerId;
 
     @Column(name = "customer_name", length = 100 , nullable = false)
     private String  customerName;
@@ -42,6 +42,8 @@ public class Customer {
     @Column(name = "active_state",columnDefinition = "TINYINT default 0")
     private boolean activeState;
 
+    @OneToMany(mappedBy="customer")
+    private Set<Order> orders;
 
 
 }

@@ -31,8 +31,14 @@ public class Employee {
     @Column(name = "employee_name", length = 100 , nullable = false)
     private String  employeeName;
 
+    @Column(name = "user_name", length = 100 , nullable = false)
+    private String  userName;
+
     @Column(name = "employee_password", length = 100 , nullable = false)
     private String  employeePassword;
+
+    @Column(name = "employee_confirm_password", length = 100 , nullable = false)
+    private String  confirmPassword;
 
     @Column(name = "employee_address", length = 250 )
     private String employeeAddress;
@@ -46,6 +52,12 @@ public class Employee {
 
     @Column(name = "nic", length = 20)
     private String nic;
+
+    @Column(name = "gender", length = 20)
+    private String gender;
+
+    @Column(name = "business_Type", length = 20)
+    private String businessType;
 
     @Column(name = "business_name", nullable = false)
     private String businessName;

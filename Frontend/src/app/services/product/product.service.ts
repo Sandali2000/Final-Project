@@ -10,7 +10,7 @@ export class ProductService {
   viewItem() {
     return this.http.get('http://localhost:4000/api/v1/item/getAllItem');
   }
-  getById(id:any){
-    return this.http.get('http://localhost:4000/api/v1/item/getById' + id);
+  getById(id:any ){
+    return this.http.get('http://localhost:4000/api/v1/item/getById?id=' + id);
   }
 }

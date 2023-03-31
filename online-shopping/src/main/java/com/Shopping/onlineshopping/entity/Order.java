@@ -12,7 +12,7 @@ import java.util.Date;
 import java.util.Set;
 
 @Entity
-@Table(name = "orders")
+@Table(name = "order")
 @TypeDefs({
         @TypeDef(name = "json",typeClass = JsonType.class)
 })
@@ -34,6 +34,22 @@ public class Order {
 
     @Column(name = "active_state",columnDefinition = "TINYINT default 1")
     private boolean activeState;
+
+
+    @ManyToOne
+    @JoinColumn(name="customer_id", nullable=false)
+    private Customer customer;
+
+
+    @OneToMany(mappedBy="orders")
+    private Set<OrderDetails> orderDetails;
+
+    public Order(Customer customers, Date date, Double total) {
+        this.customer = customers;
+        this.date = date;
+        this.total = total;
+    }
+
 
 
 

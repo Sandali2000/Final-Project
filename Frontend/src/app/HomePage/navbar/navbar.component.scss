@@ -25,7 +25,7 @@
   margin-top: 3px;
   border: 0;
   border-radius: 0;
-  background: #3f2b07;
+  background: #07122e;
 }
 
 .nav .dropdown-menu a.active {
@@ -36,7 +36,7 @@
 @media (min-width: 768px) {
   .nav,
   .nav .navbar {
-    background: #493712 !important;
+    background: #07122e !important;
   }
 
   .nav .navbar-brand {
@@ -51,7 +51,7 @@
 
   .nav .navbar-dark a.nav-link:hover,
   .nav .navbar-dark a.nav-link.active {
-    color: #edcc52;
+    color:#c2cef0;
   }
 }
 
@@ -62,7 +62,7 @@
 
   .nav,
   .nav .navbar {
-    background: #3f2b07!important;
+    background: #07122e!important;
   }
 
   .nav a.nav-link {
@@ -79,7 +79,7 @@ button{
   position: relative;
   top: -5px;
   bottom: 0;
-  background-color: #3f2b07;
+  background-color: #3c5599;
   border: 1px solid white;
   color: #ffffff;
   font-size: 14px;
@@ -87,8 +87,8 @@ button{
 
 }
 .button:hover{
-  color: #edcc52;
-  background-color: #3f2b07;
+  color: #c7d1ee;
+  background-color:#07122e;
   cursor: pointer;
 }
 

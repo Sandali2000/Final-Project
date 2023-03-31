@@ -1,6 +1,7 @@
 package com.Shopping.onlineshopping.controller;
 
 import com.Shopping.onlineshopping.Util.StandardResponse;
+import com.Shopping.onlineshopping.dto.CustomerDto;
 import com.Shopping.onlineshopping.dto.ItemDTO;
 import com.Shopping.onlineshopping.dto.request.RequestSaveItemDTO;
 import com.Shopping.onlineshopping.entity.Item;
@@ -20,7 +21,7 @@ public class ItemController {
     public ItemService itemService;
 
     @PostMapping(path = "/save")
-    public String saveItem(@RequestBody RequestSaveItemDTO requestSaveItemDTO){
+    public RequestSaveItemDTO saveItem(@RequestBody RequestSaveItemDTO requestSaveItemDTO){
         return  itemService.saveItem(requestSaveItemDTO);
     }
 
@@ -36,6 +37,8 @@ public class ItemController {
         return getItem;
     }
 
+
+
     @GetMapping(path = "getAllItem")
     public List<ItemDTO> getAllItem()
     {
@@ -43,10 +46,10 @@ public class ItemController {
         return itemDTOList;
 
     }
-    @GetMapping(path = "getById", params = "id")
-    public ItemDTO getById(@RequestParam (value = "id") int id)
+    @GetMapping(path = "getById", params = "itemId")
+    public ItemDTO getById(@RequestParam (value = "itemId") int itemId)
     {
-        ItemDTO itemDTO = itemService.getById(id);
+        ItemDTO itemDTO = itemService.getById(itemId);
 
         return itemDTO;
     }

@@ -19,7 +19,7 @@ public class EmployeeDto {
     private String employeeEmail;
     private ArrayList employeeNumber;
     private String businessName;
-
+    private String gender;
     private String nic;
     private boolean activeState;
 }

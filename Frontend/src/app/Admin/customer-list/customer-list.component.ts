@@ -14,7 +14,7 @@ export class CustomerListComponent implements OnInit {
   searchText: any
   totalLength: any;
   page: number = 1;
-
+  data:any
   length: any;
   sideBarToggler() {
     this.sideBarOpen = !this.sideBarOpen;
@@ -39,12 +39,20 @@ export class CustomerListComponent implements OnInit {
 
     })
   }
-  loadEmployee(){
+  loadEmployee() {
 
-    this.customerService.getAllCustomer().subscribe((data:any)=>{
+    this.customerService.getAllCustomer().subscribe((data: any) => {
       //console.log(data);
-      this.customer =data;
+      this.customer = data;
+    })
+
+  }
+  deleteCustomer(customerId:number){
+    this.customerService.deleteCustomer(customerId).subscribe(data=>{
+      console.log(data);
+
     })
   }
+
 
 }

@@ -54,6 +54,12 @@ import { ChackOutPageComponent } from './chack-out-page/chack-out-page.component
 import { EmployeeListComponent } from './Admin/employee-list/employee-list.component';
 import { CustomerListComponent } from './Admin/customer-list/customer-list.component';
 import { ItemListComponent } from './Admin/item-list/item-list.component';
+import { AddItemComponent } from './Employee/add-item/add-item.component';
+import { EmployeeDashboardComponent } from './Employee/employee-dashboard/employee-dashboard.component';
+import { EmployeeNavComponent } from './Employee/employee-nav/employee-nav.component';
+import { EmployeeHeaderComponent } from './Employee/employee-header/employee-header.component';
+import {MatSelectModule} from "@angular/material/select";
+import { AddEmployeeComponent } from './Employee/add-employee/add-employee.component';
 
 @NgModule({
   declarations: [
@@ -88,35 +94,41 @@ import { ItemListComponent } from './Admin/item-list/item-list.component';
     EmployeeListComponent,
     CustomerListComponent,
     ItemListComponent,
+    AddItemComponent,
+    EmployeeDashboardComponent,
+    EmployeeNavComponent,
+    EmployeeHeaderComponent,
+    AddEmployeeComponent,
 
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    MatSidenavModule,
-    MatToolbarModule,
-    MatMenuModule,
-    MatIconModule,
-    MatDividerModule,
-    MatListModule,
-    MatButtonModule,
-    MatPaginatorModule,
-    MatTableModule,
-    NgxPaginationModule,
-    MatDialogModule,
-    Ng2SearchPipeModule,
-    MatFormFieldModule,
-    MatInputModule,
-    CdkListboxModule,
-    RouterModule,
-    CarouselModule,
-    CarouselsModule
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        HttpClientModule,
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        MatSidenavModule,
+        MatToolbarModule,
+        MatMenuModule,
+        MatIconModule,
+        MatDividerModule,
+        MatListModule,
+        MatButtonModule,
+        MatPaginatorModule,
+        MatTableModule,
+        NgxPaginationModule,
+        MatDialogModule,
+        Ng2SearchPipeModule,
+        MatFormFieldModule,
+        MatInputModule,
+        CdkListboxModule,
+        RouterModule,
+        CarouselModule,
+        CarouselsModule,
+        MatSelectModule
 
-  ],
+    ],
   providers: [],
   bootstrap: [AppComponent],
 

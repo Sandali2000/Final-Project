@@ -1,0 +1,76 @@
+<mat-drawer-container style="margin-top: -50px">
+  <mat-drawer mode="side" [opened]="sideBarOpen">
+    <app-employee-nav></app-employee-nav>
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-employee-header (toggleSidebarForMe)="sideBarToggler()"></app-employee-header>
+
+    <div class="container-fluid page">
+      <div class="d-flex page__box p-3 mt-2">Employee List</div>
+      <div class="page__content shadow p-3 position-relative">
+        <div class="page__content-data position-absolute ">
+
+
+          <section>
+            <div >
+              <H1>Cloths</H1>
+            <form [formGroup]="addItem" >
+              <div class>
+              <mat-form-field appearance="outline" style="width: 300px ; margin: 2px">
+                <mat-label>Item Name</mat-label>
+                <input matInput placeholder="Item Name" formControlName="itemName"/></mat-form-field>
+
+              <mat-form-field appearance="outline" style="width: 400px">
+              <mat-label>Shop Name </mat-label>
+              <input matInput type="text" required
+                     placeholder="Shop Name" formControlName="shopName"/>
+            </mat-form-field>
+                <mat-form-field appearance="outline" style="width: 300px ; margin: 2px">
+                  <mat-label>Price </mat-label>
+                  <input matInput type="text"
+                         placeholder="price" formControlName="price">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" style="width: 300px">
+                  <mat-label>Quantity  </mat-label>
+                  <input matInput type="number"
+                         placeholder="price" formControlName="quantity"/>
+                </mat-form-field>
+                <mat-form-field appearance="outline" style="width: 300px">
+                  <mat-label>Image URL </mat-label>
+                  <input matInput type="text"
+                         placeholder="Image URL" formControlName="image"/>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" style="margin: 2px; width: 300px">
+                  <mat-label>Measuring Type</mat-label>
+                  <select matNativeControl required>
+                    <option value="XL">XL</option>
+                    <option value="L">L</option>
+                    <option value="S">S</option>
+                    <option value="XXL">XXL</option>
+                    <option value="XS">XS</option>
+                    <option value="XXXL">XXXL</option>
+                  </select>
+                </mat-form-field>
+              </div>
+              <mat-form-field appearance="outline" style="width: 800px ">
+                <mat-label>Comment </mat-label>
+                <textarea  matInput formControlName="description"></textarea>
+              </mat-form-field>
+
+              <button class="submit-btn" (click)="onSubmit()"> Sing Up </button>
+
+            </form></div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+
+  </mat-drawer-content>
+</mat-drawer-container>
+
+
+
+

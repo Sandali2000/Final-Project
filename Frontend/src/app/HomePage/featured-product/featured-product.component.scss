@@ -9,12 +9,12 @@
 .product-item .product-title {
   padding: 15px;
   text-align: center;
-  background: #0e0901;
+  background: #4f4fd2;
   transition: all .3s;
 }
 
 .product-item:hover .product-title {
-  background: #a1630e;
+  background: rgba(97, 123, 255, 0.64);
 }
 
 .product-item .product-title a,
@@ -31,7 +31,7 @@
 
 .product-item .product-title .ratting i {
   font-size: 14px;
-  color: #a1630e;
+  color: rgba(5, 5, 37, 0.76);
 }
 
 .product-item .product-content .price span {
@@ -80,7 +80,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(208, 162, 104, 0.51);
+  background: rgba(97, 123, 255, 0.42);
   transition: all .3s;
   font-size: 0;
   z-index: 1;
@@ -100,7 +100,7 @@
   font-size: 16px;
   text-align: center;
   color: #ffffff;
-  background: #3f2b07;
+  background: #040444;
   border: 1px solid #ffffff;
   border-radius: 4px;
   transition: all .3s;
@@ -116,19 +116,19 @@
 }
 
 .product-item .product-image .product-action a:hover {
-  color: #3f2b07;
+  color: #040444;
   background: #ffffff;
-  border: 1px solid #3f2b07;
+  border: 1px solid #040444;
 }
 
 .product-item .product-price {
   padding: 20px;
-  background: #000000;
+  background: #4f4fd2;
   transition: all .3s;
 }
 
 .product-item:hover .product-price {
-  background: #a1630e;
+  background: #040444;
 }
 
 .product-item .product-price h3 {
@@ -144,13 +144,13 @@
 .product-item .product-price .btn {
   float: right;
   border: none;
-  color: #000000;
-  background: #a1630e;
+  color: #ffffff;
+  background: #040444;
 }
 
 .product-item:hover .product-price .btn,
 .product-item .product-price .btn:hover {
-  color: #3f2b07;
+  color: #040444;
   background: #ffffff;
 }
 

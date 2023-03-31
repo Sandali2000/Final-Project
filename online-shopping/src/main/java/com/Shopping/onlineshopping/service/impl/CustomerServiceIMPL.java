@@ -49,7 +49,7 @@ public class CustomerServiceIMPL implements CustomerService {
     }
 
     @Override
-    public CustomerDto getCustomer(int customerId){
+    public CustomerDto getCustomer(long customerId){
      //   Optional<Customer> customer = customerRepo.findById(customerId);
      //   CustomerDto customerDto= modelMapper.map(customer.get(),CustomerDto.class);
         if(customerRepo.existsById(customerId)){
@@ -70,7 +70,7 @@ public class CustomerServiceIMPL implements CustomerService {
     }
 
     @Override
-    public String updateCustomer(int customerId){
+    public String updateCustomer(long customerId){
         if(customerRepo.existsById(customerId)){
 
         }
@@ -78,7 +78,7 @@ public class CustomerServiceIMPL implements CustomerService {
     }
 
     @Override
-    public String update(UpdateCustomerDTO updateCustomerDTO) {
+    public String updates(UpdateCustomerDTO updateCustomerDTO) {
         if(customerRepo.existsById(updateCustomerDTO.getCustomerId())){
             Customer customer = customerRepo.getById(updateCustomerDTO.getCustomerId());
 
@@ -104,13 +104,24 @@ public class CustomerServiceIMPL implements CustomerService {
     }
 
     @Override
-    public String deleteCustomer(int customerId) {
+    public String deleteCustomer(long customerId) {
         if(customerRepo.existsById(customerId)){
             customerRepo.deleteById(customerId);
             return  customerId+ " delete successfully";
         }else {
             throw new   RuntimeException ("No customer Found ");
         }
+//
+//        @DeleteMapping("/employees/{id}")
+//        public ResponseEntity<Map<String, Boolean>> deleteEmployee (@PathVariable Long id){
+//            Employee employee = employeeRepository.findById(id).
+//                    orElseThrow(()-> new ResourceNotFoundException("Employe not Exit with id :" + id));
+//
+//            employeeRepository.delete(employee);
+//            Map<String, Boolean> response = new HashMap<>();
+//            response.put("delete", Boolean.TRUE);
+//            return ResponseEntity.ok(response);
+//        }
 
     }
 

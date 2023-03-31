@@ -39,18 +39,18 @@
 }
 
 .header .navbar a {
-  color: #3f2b07;
+  color: #040444;
   position: relative;
 
 
 }
 .header .navbar a:hover {
-  color: #a1630e;
+  color: #4f4fd2;
 }
 
 
 .header .navbar i{
-  color: rgba(0, 0, 12, 0.76);
+  color: rgb(4, 4, 68);
   width: 20px;
   text-align: center;
   margin-right: 8px;
@@ -58,7 +58,7 @@
 }
 
 .header .navbar a:hover i {
-  color: #a1630e;
+  color: #4f4fd2;
 }
 
 .header-slider {
@@ -141,7 +141,7 @@
   height: 100%;
   display: flex;
   align-items: center;
-  background: rgba(208, 162, 104, 0.51);;
+  background: rgba(79, 79, 210, 0.37);;
   transition: all 0.3s;
   opacity: 0;
 }

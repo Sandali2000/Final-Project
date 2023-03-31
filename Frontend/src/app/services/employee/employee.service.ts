@@ -11,4 +11,7 @@ export class EmployeeService {
   getAllEmployee(){
     return this.http.get('http://localhost:4000/api/v1/employee/getAllEmployee1');
   }
+  addEmployee(employee:any){
+    return this.http.post('http://localhost:4000/api/v1/customer/save', employee);
+  }
 }

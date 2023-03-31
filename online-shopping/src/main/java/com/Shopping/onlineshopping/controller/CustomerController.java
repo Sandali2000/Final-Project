@@ -1,6 +1,7 @@
 package com.Shopping.onlineshopping.controller;
 
 
+import com.Shopping.onlineshopping.Util.StandardResponse;
 import com.Shopping.onlineshopping.dto.CustomerDto;
 import com.Shopping.onlineshopping.dto.paginate.PaginateResponseCustomerDTO;
 import com.Shopping.onlineshopping.dto.request.RequestSaveCustomerDTO;
@@ -10,6 +11,8 @@ import com.Shopping.onlineshopping.service.CustomerService;
 import com.Shopping.onlineshopping.service.impl.CustomerServiceIMPL;
 import org.aspectj.weaver.loadtime.Options;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.constraints.Max;
@@ -31,10 +34,9 @@ public class CustomerController {
     }
 
     @GetMapping(path = "/getCustomer-by-id", params = "id")
-    public CustomerDto getCustomer(@RequestParam(value = "id") int customerId ){
+    public CustomerDto getCustomer(@RequestParam(value = "id") long customerId ){
         CustomerDto customerDto =CustomerService.getCustomer(customerId);
         return customerDto;
-
     }
 
     @GetMapping(path = "/get-all-customer" )
@@ -52,21 +54,50 @@ public class CustomerController {
     }
 
     @PutMapping(path = "/update", params = "id")
-    public  String updateCustomer(@RequestParam (value = "id") int customerId){
+    public  String updateCustomer(@RequestParam (value = "id") long customerId){
         CustomerService.updateCustomer(customerId);
         return "";
     }
 
-    @PutMapping(path = "/updateCustomer")
-    public String update(@RequestBody UpdateCustomerDTO updateCustomerDTO){
-        return   CustomerService.update(updateCustomerDTO);
+
+
+//    @PutMapping(path = "/updateCustomer")
+//    public String update(@RequestBody UpdateCustomerDTO updateCustomerDTO){
+//        return   CustomerService.update(updateCustomerDTO);
+//    }
+
+    @PutMapping(path = "/updateCustomers")
+    public ResponseEntity<StandardResponse> updateCus(@RequestBody UpdateCustomerDTO updateCustomerDTO){
+       String message = CustomerService.updates(updateCustomerDTO);
+
+        return new ResponseEntity<StandardResponse>(
+                new StandardResponse(200, "success", message),
+                HttpStatus.OK
+        );
     }
 
-    @DeleteMapping(path = "deleteCustomer/{id}")
-    public String deleteCustomer(@PathVariable (value = "id") int customerId){
-        return  CustomerService.deleteCustomer(customerId);
+    @DeleteMapping(path = "deleteCustomer/{customerId}")
+    public ResponseEntity<StandardResponse> deleteCustomer(@PathVariable (value = "customerId") long customerId){
+        String message =  CustomerService.deleteCustomer(customerId);
+
+        return new ResponseEntity<StandardResponse>(
+                new StandardResponse(200, "success", message),
+                HttpStatus.OK
+        );
 
     }
+//
+//    @DeleteMapping("/employees/{id}")
+//    public ResponseEntity<Map<String, Boolean>> deleteEmployee (@PathVariable Long id){
+//        Employee employee = employeeRepository.findById(id).
+//                orElseThrow(()-> new ResourceNotFoundException("Employe not Exit with id :" + id));
+//
+//        employeeRepository.delete(employee);
+//        Map<String, Boolean> response = new HashMap<>();
+//        response.put("delete", Boolean.TRUE);
+//        return ResponseEntity.ok(response);
+//    }
+
 
     @GetMapping(path = "/get-all-customer/{status}")
     public List<CustomerDto> getAllCustomersByUsingStatus(@RequestParam (value = "status") boolean activeState){

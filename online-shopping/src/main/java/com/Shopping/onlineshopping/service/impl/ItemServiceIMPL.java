@@ -11,7 +11,6 @@ import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,12 +26,12 @@ public class ItemServiceIMPL implements ItemService {
     private ItemMapper itemMapper;
 
     @Override
-    public String saveItem(RequestSaveItemDTO requestSaveItemDTO) {
+    public RequestSaveItemDTO saveItem(RequestSaveItemDTO requestSaveItemDTO) {
         Item item = modelMapper.map(requestSaveItemDTO,Item.class);
         item.setActiveState(true);
         if(!itemRepo.existsById(item.getItemId())){
             itemRepo.save(item);
-            return item.getItemId()+ " save item";
+            return requestSaveItemDTO;
         }else {
             throw new RuntimeException("error message");
         }
@@ -86,6 +85,8 @@ public class ItemServiceIMPL implements ItemService {
             return itemDTO;
 
     }
+
+
 
 
 }

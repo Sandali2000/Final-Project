@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs";
+
 @Injectable({
   providedIn: 'root'
 })
 export class CustomerService {
-
+  private baseURL = "http://localhost:4000/api/v1/customer";
   constructor(private http:HttpClient) { }
 
 
@@ -18,5 +20,10 @@ export class CustomerService {
 
   currentUser(){
 
+  }
+
+  deleteCustomer(customerId:any ): Observable<Object>{
+
+    return this.http.delete(`${this.baseURL}/deleteCustomer/${customerId}`);
   }
 }

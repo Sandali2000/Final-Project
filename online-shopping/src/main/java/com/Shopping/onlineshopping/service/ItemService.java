@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface ItemService {
 
-    String saveItem(RequestSaveItemDTO requestSaveItemDTO);
+    RequestSaveItemDTO saveItem(RequestSaveItemDTO requestSaveItemDTO);
 
 
     List<ItemDTO> getItemByName(String name);
@@ -17,5 +17,7 @@ public interface ItemService {
     List<ItemDTO> getAllItem();
 
 
-    ItemDTO getById(int id);
+    ItemDTO getById(int itemId);
+
+
 }

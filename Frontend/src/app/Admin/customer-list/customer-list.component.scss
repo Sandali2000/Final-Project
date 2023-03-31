@@ -4,7 +4,7 @@
   background: #f1f5f9;
   &__box {
     min-height: 120px;
-    background: #261b02;
+    background: #0f172a;
     margin: 0 -1rem;
     font-size: 36px;
   }
@@ -25,7 +25,7 @@
 
 
 body {
-  background-color: lighten(#261b02, 30%);
+  background-color: lighten(#0f172a, 30%);
 
   * { box-sizing: border-box;
 
@@ -33,7 +33,7 @@ body {
 }
 
 .header {
-  background-color: darken(#4b3605, 5%);
+  background-color: darken(#0f172a, 5%);
   color: white;
   width: 1200px;
   font-size: 1.5em;
@@ -64,7 +64,7 @@ table {
   width: 1200px;
 
   td, th {
-    color: darken(#0c0b01, 10%);
+    color: darken(#0f172a, 10%);
     padding: 10px;
   }
 
@@ -80,14 +80,14 @@ table {
   }
 
   th {
-    background-color: lighten(#523415, 50%);
+    background-color: lighten(#0f172a, 50%);
     font-weight: 300;
     text-align: center;
   }
 
   tr {
     &:nth-child(2n) { background-color: white; }
-    &:nth-child(2n+1) { background-color: lighten(#523415, 75%) }
+    &:nth-child(2n+1) { background-color: lighten(#0f172a, 75%) }
   }
 }
 
@@ -201,7 +201,7 @@ div input{
   border: none;
   height: 2.4rem;
   width: 25rem;
-  background-color: #f5e2ac;
+  background-color: rgba(194, 194, 236, 0.94);
   padding: 1rem;
   font-size: 1rem;
   font-weight: 500;
@@ -212,12 +212,13 @@ div input{
 :host{
   display: flex;
   flex-direction: column;
-  height: 760px;
+  height: 750px;
 }
 mat-drawer{
   width: 260px;
-  background: #1f1701;
+  background:  #0f172a;
 }
 mat-drawer-container{
   height: 100%;
 }
+

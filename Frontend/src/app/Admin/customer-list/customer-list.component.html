@@ -44,10 +44,11 @@
 
 
                   <td >
-                    <a href ="/editStudent/{{customer._id}}" class="btn btn-success">
+                    <a href ="/editStudent/{{customer.customerId}}" class="btn btn-success">
                       EDIT
                     </a>|
-                    <button  class="btn btn-danger">DELETE</button> </td>
+                    <button (click)="deleteCustomer(customer.customerId)"  class="btn btn-danger">DELETE</button> </td>
+<!--                  <button (click)= "deleteEmployee(employee.id)" class="btn btn-danger" style="margin-left: 10px">Delete</button>-->
 
                 </tr>
 

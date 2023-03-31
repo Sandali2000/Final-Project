@@ -12,7 +12,7 @@ import java.util.List;
 @EnableJpaRepositories
 @Repository
 @Transactional
-public interface CustomerRepo extends JpaRepository<Customer, Integer> {
+public interface CustomerRepo extends JpaRepository<Customer, Long> {
 
     List<Customer> findAllByActiveStateEquals (boolean activeState);
 
