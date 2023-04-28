@@ -25,9 +25,9 @@ public class ItemController {
         return  itemService.saveItem(requestSaveItemDTO);
     }
 
-    @GetMapping(path = "/get-by-name", params = "name")
-    public List<ItemDTO> getItemByName(@RequestParam (value = "name") String name){
-        List<ItemDTO> getItem = itemService.getItemByName(name);
+    @GetMapping(path = "/get-by-name", params = "type")
+    public List<ItemDTO> getItemByName(@RequestParam (value = "type") String type){
+        List<ItemDTO> getItem = itemService.getItemByName(type);
         return getItem;
     }
 
@@ -53,5 +53,24 @@ public class ItemController {
 
         return itemDTO;
     }
+
+    @GetMapping(path ="/get-item-by-id", params = "employeeId")
+    public List<ItemDTO> getItemByEmployee(@RequestParam (value = "employeeId")int employeeId) {
+        List<ItemDTO> itemDTOList = itemService.getItemByEmployee(employeeId);
+        return itemDTOList;
+    }
+
+    @DeleteMapping(path = "deleteItem/{itemId}")
+    public ResponseEntity<StandardResponse> deleteItem(@PathVariable (value = "itemId") int itemId){
+        String message =  itemService.deleteItem(itemId);
+
+        return new ResponseEntity<StandardResponse>(
+                new StandardResponse(200, "success", message),
+                HttpStatus.OK
+        );
+
+    }
+
+
 
 }

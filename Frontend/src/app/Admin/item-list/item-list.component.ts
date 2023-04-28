@@ -20,6 +20,7 @@ export class ItemListComponent implements OnInit {
   sideBarToggler() {
     this.sideBarOpen = !this.sideBarOpen;
   }
+
   constructor(private rout: ActivatedRoute,
               private routes: Router,
               private itemService:ItemService) { }
@@ -44,6 +45,15 @@ export class ItemListComponent implements OnInit {
     this.itemService.getAllItem().subscribe((data:any)=>{
       //console.log(data);
       this.item =data;
+    })
+  }
+
+  deleteItem(itemId:number){
+    this.itemService.deleteItem(itemId).subscribe(data=>{
+      console.log(data);
+      alert("Item deleted")
+      this.loadItem();
+      this.routes.navigate(['/ItemList']);
     })
   }
 

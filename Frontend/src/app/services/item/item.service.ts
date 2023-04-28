@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import { Observable } from 'rxjs';
-import {Item} from "../../item/Item";
+import {Item} from "../../Models/item/Item";
 
 @Injectable({
   providedIn: 'root'
@@ -18,5 +18,13 @@ export class ItemService {
   }
   getItemById(itemId:number): Observable<Item>{
     return this.http.get<Item>(`${this.baseURL}/getById?itemId=${itemId}`);
+  }
+
+  getItemByEmployee(employeeId:number){
+    return this.http.get('http://localhost:4000/api/v1/item//get-item-by-id?employeeId=' + employeeId);
+}
+
+  deleteItem(itemId:any ): Observable<Object>{
+    return this.http.delete(`${this.baseURL}/deleteItem/${itemId}`);
   }
 }

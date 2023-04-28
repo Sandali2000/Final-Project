@@ -2,7 +2,7 @@
 <div class="container" id="container">
   <div class="form-container sign-up-container">
     <a (click)="openDialog1()"  class="sing-form" style="margin-top: 50px">Sing Up</a>
-    <form action="#">
+    <form >
       <h1>Create Account</h1>
       <div class="social-container">
         <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -13,15 +13,15 @@
       <span>or use your email for registration</span>
 
       <mat-form-field appearance="outline" style="width: 300px">
-        <mat-label>E-mail </mat-label>
-        <input  type="email" matInput placeholder="E-mail" required>
+        <mat-label >E-mail </mat-label>
+        <input  type="email" matInput placeholder="E-mail" required [(ngModel)]="customerEmail" [ngModelOptions]="{standalone:true}">
       </mat-form-field>
       <mat-form-field appearance="outline" style="width: 300px">
-        <mat-label>Password</mat-label>
-        <input  type="password" matInput placeholder="Password" required>
+        <mat-label >Password</mat-label>
+        <input  type="password" matInput placeholder="Password" required [(ngModel)]="customerPassword" [ngModelOptions]="{standalone:true}">
       </mat-form-field>
 
-      <button>Sign In</button>
+      <button (click)="login()">Sign In</button>
     </form>
   </div>
 </div>

@@ -45,40 +45,50 @@
           <span class="details">NIC Number</span>
           <input type="text" placeholder="Enter NIC number" formControlName="nic" required>
         </div>
-      </div>
-      <div class="gender-details">
-        <input type="radio" name="gender" id="dot-1" formControlName="gender">
-        <input type="radio" name="gender" id="dot-2"formControlName="gender">
-        <input type="radio" name="gender" id="dot-3"formControlName="gender">
-        <span class="gender-title">Gender</span>
-        <div class="category">
-          <label for="dot-1">
-            <span class="dot one"></span>
-            <span class="gender">Male</span>
-          </label>
-          <label for="dot-2">
-            <span class="dot two"></span>
-            <span class="gender">Female</span>
-          </label>
-          <label for="dot-3">
-            <span class="dot three"></span>
-            <span class="gender">Prefer not to say</span>
-          </label>
-        </div>
 
-        <div class="input-box">
-          <label for="membership" class="details">Choose a Business Type:</label>
-          <select name="membership" id="membership" style="width: 130px; margin: 15px; height: 35px" formControlName="businessType">
-            <option value="free">Free</option>
-            <option value="bronze">Bronze</option>
-            <option value="silver" selected>Silver</option>
-            <option value="Gold">Gold</option>
-          </select>
-        </div>
 
+<!--        <input type="radio" name="Male" id="dot-1" formControlName="Male">-->
+<!--        <input type="radio" name="Female" id="dot-2" formControlName="Female">-->
+<!--        <input type="radio" name="Other" id="dot-3" formControlName="Other">-->
+<!--        <span class="gender-title">Gender</span>-->
+<!--        <div class="category">-->
+<!--          <label for="dot-1">-->
+<!--            <span class="dot one"></span>-->
+<!--            <span class="Male">Male</span>-->
+<!--          </label>-->
+<!--          <label for="dot-2">-->
+<!--            <span class="dot two"></span>-->
+<!--            <span class="Female">Female</span>-->
+<!--          </label>-->
+<!--          <label for="dot-3">-->
+<!--            <span class="dot three"></span>-->
+<!--            <span class="Other">Prefer not to say</span>-->
+<!--          </label>-->
+
+
+          <div class="businessDetails">
+<!--          <label for="membership" class="details">Choose a Business Type:</label>-->
+<!--          <select name="membership" id="membership" style="width: 130px; margin: 15px; height: 35px" formControlName="businessType">-->
+<!--            <option value="free">Free</option>-->
+<!--            <option value="bronze">Bronze</option>-->
+<!--            <option value="silver" selected>Silver</option>-->
+<!--            <option value="Gold">Gold</option>-->
+<!--          </select>-->
+
+          <mat-form-field appearance="fill">
+            <mat-label >Choose a Business Type:</mat-label>
+            <mat-select [(value)]="selected" formControlName="businessType">
+              <mat-option>None</mat-option>
+              <mat-option value="option1">Option 1</mat-option>
+              <mat-option value="option2">Option 2</mat-option>
+              <mat-option value="option3">Option 3</mat-option>
+            </mat-select>
+          </mat-form-field>
       </div>
+  </div>
+
       <div class="button">
-        <input type="submit" value="Register">
+        <input type="submit" (click)="onSubmit()"  value="Register">
       </div>
     </form>
   </div>

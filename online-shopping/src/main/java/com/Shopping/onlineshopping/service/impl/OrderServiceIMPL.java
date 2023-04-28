@@ -2,7 +2,7 @@ package com.Shopping.onlineshopping.service.impl;
 
 import com.Shopping.onlineshopping.dto.OrderDto;
 import com.Shopping.onlineshopping.dto.request.RequestOrderSaveDTO;
-import com.Shopping.onlineshopping.entity.Order;
+import com.Shopping.onlineshopping.entity.Orders;
 import com.Shopping.onlineshopping.entity.OrderDetails;
 import com.Shopping.onlineshopping.repo.CustomerRepo;
 import com.Shopping.onlineshopping.repo.ItemRepo;
@@ -40,7 +40,7 @@ public class OrderServiceIMPL implements OrderService {
     @Override
     @Transactional
     public RequestOrderSaveDTO saveItem(RequestOrderSaveDTO requestOrderSaveDTO) {
-        Order order = new Order(
+        Orders order = new Orders(
                 customerRepo.getById(requestOrderSaveDTO.getCustomer()),
                 requestOrderSaveDTO.getDate(),
                 requestOrderSaveDTO.getTotal()
@@ -60,7 +60,7 @@ public class OrderServiceIMPL implements OrderService {
             if(orderDetails.size()>0){
                 orderDetailsRepo.saveAll(orderDetails);
             }
-            throw  new RuntimeException("save");
+            return null;
         }
         return null;
 

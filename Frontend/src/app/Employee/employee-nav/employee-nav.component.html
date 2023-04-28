@@ -1,22 +1,22 @@
 
 <mat-nav-list>
   <div class="logo py-4">
-    <img src="assets/logo.png" alt="logo">
+    <img src="assets/log.png" alt="logo">
   </div>
   <mat-divider>   </mat-divider>
   <h2 matSubheader class="mt-2">
-    APPLICATION
+    EMPLOYEE DASHBOARD
   </h2>
 
-  <a mat-list-item routerLink="/EmployeeDashboard" routerLinkActive="list-item-active">
+  <a mat-list-item routerLink="/EmployeeDashboard/{{employee.employeeId}}" routerLinkActive="list-item-active">
     <mat-icon>dashboard</mat-icon> Dashboard</a>
-  <a mat-list-item routerLink="/AddItem" routerLinkActive="list-item-active">
+  <a mat-list-item routerLink="/AddItem/{{employee.employeeId}}" routerLinkActive="list-item-active">
     <mat-icon>group</mat-icon>Add Item
   </a>
   <a mat-list-item routerLink="/CustomerLis" routerLinkActive="list-item-active">
     <mat-icon>note_add</mat-icon>Customer List
   </a>
-  <a mat-list-item routerLink="/ItemLis" routerLinkActive="list-item-active">
+  <a mat-list-item routerLink="/itemByEmployees/{{employee.employeeId}}" routerLinkActive="list-item-active">
     <mat-icon>menu_book</mat-icon>Item List
   </a>
   <a mat-list-item routerLink="/re-book" routerLinkActive="list-item-active">

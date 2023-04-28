@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ItemService} from "../../services/item/item.service";
-import {ActivatedRoute} from "@angular/router";
-import {Item} from "../../item/Item";
+import {ActivatedRoute, Router} from "@angular/router";
+import {Item} from "../../Models/item/Item";
+import {CartService} from "../../services/cart/cart.service";
 
 @Component({
   selector: 'app-product-dis',
@@ -12,7 +13,9 @@ export class ProductDisComponent implements OnInit {
   itemId !:number
   item!: any
   constructor(private Url:ActivatedRoute,
-              private  itemService:ItemService) { }
+              private  itemService:ItemService,
+              private cartService:CartService,
+              private router:Router) { }
 
   ngOnInit(): void {
 
@@ -30,5 +33,10 @@ export class ProductDisComponent implements OnInit {
       //console.log(data);
       this.item = data;
     })
+  }
+
+  addToCart(){
+    this.cartService.addToCart(this.item);
+    this.router.navigateByUrl('/cartPage')
   }
 }

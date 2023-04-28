@@ -3,9 +3,13 @@ package com.Shopping.onlineshopping.controller;
 
 import com.Shopping.onlineshopping.Util.StandardResponse;
 import com.Shopping.onlineshopping.dto.CustomerDto;
+import com.Shopping.onlineshopping.dto.EmployeeDto;
+import com.Shopping.onlineshopping.dto.LoginCustomerDTO;
+import com.Shopping.onlineshopping.dto.LoginDTO;
 import com.Shopping.onlineshopping.dto.paginate.PaginateResponseCustomerDTO;
 import com.Shopping.onlineshopping.dto.request.RequestSaveCustomerDTO;
 import com.Shopping.onlineshopping.dto.request.UpdateCustomerDTO;
+import com.Shopping.onlineshopping.dto.response.LoginResponse;
 import com.Shopping.onlineshopping.dto.response.ResponseSaveCustomerDTO;
 import com.Shopping.onlineshopping.service.CustomerService;
 import com.Shopping.onlineshopping.service.impl.CustomerServiceIMPL;
@@ -27,6 +31,7 @@ public class CustomerController {
     @Autowired
     private CustomerService CustomerService;
 
+
     @PostMapping (path = "/save")
     public RequestSaveCustomerDTO saveCustomer( @RequestBody RequestSaveCustomerDTO requestSaveCustomerDTO){
       CustomerService.saveCustomer(requestSaveCustomerDTO);
@@ -34,7 +39,7 @@ public class CustomerController {
     }
 
     @GetMapping(path = "/getCustomer-by-id", params = "id")
-    public CustomerDto getCustomer(@RequestParam(value = "id") long customerId ){
+    public CustomerDto getCustomer(@RequestParam(value = "id") int customerId ){
         CustomerDto customerDto =CustomerService.getCustomer(customerId);
         return customerDto;
     }
@@ -54,7 +59,7 @@ public class CustomerController {
     }
 
     @PutMapping(path = "/update", params = "id")
-    public  String updateCustomer(@RequestParam (value = "id") long customerId){
+    public  String updateCustomer(@RequestParam (value = "id") int customerId){
         CustomerService.updateCustomer(customerId);
         return "";
     }
@@ -77,7 +82,7 @@ public class CustomerController {
     }
 
     @DeleteMapping(path = "deleteCustomer/{customerId}")
-    public ResponseEntity<StandardResponse> deleteCustomer(@PathVariable (value = "customerId") long customerId){
+    public ResponseEntity<StandardResponse> deleteCustomer(@PathVariable (value = "customerId") int customerId){
         String message =  CustomerService.deleteCustomer(customerId);
 
         return new ResponseEntity<StandardResponse>(
@@ -105,14 +110,19 @@ public class CustomerController {
         return allCustomers;
     }
 
-    @GetMapping(path = "/login",
-               params = {"email", "password"})
-    public CustomerDto login(@RequestParam (value = "email") String email,
-                             @RequestParam (value = "password")String password){
-       CustomerDto customerDto= CustomerService.login(email,password);
-        return customerDto;
-    }
+//    @GetMapping(path = "/login",
+//               params = {"email", "password"})
+//    public CustomerDto login(@RequestParam (value = "email") String email,
+//                             @RequestParam (value = "password")String password){
+//       CustomerDto customerDto= CustomerService.login(email,password);
+//        return customerDto;
+//    }
 
+    @PostMapping(path = "/login")
+    public ResponseEntity<?> loginCustomer(@RequestBody LoginCustomerDTO loginCustomerDTO){
+        LoginResponse loginResponse = CustomerService.loginEmployee(loginCustomerDTO);
+        return ResponseEntity.ok(loginResponse);
+    }
 
 
 

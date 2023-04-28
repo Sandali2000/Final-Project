@@ -28,16 +28,16 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int employeeId;
 
-    @Column(name = "employee_name", length = 100 , nullable = false)
+    @Column(name = "employee_name", length = 100 )
     private String  employeeName;
 
-    @Column(name = "user_name", length = 100 , nullable = false)
+    @Column(name = "user_name", length = 100 )
     private String  userName;
 
-    @Column(name = "employee_password", length = 100 , nullable = false)
+    @Column(name = "employee_password", length = 100 )
     private String  employeePassword;
 
-    @Column(name = "employee_confirm_password", length = 100 , nullable = false)
+    @Column(name = "employee_confirm_password", length = 100 )
     private String  confirmPassword;
 
     @Column(name = "employee_address", length = 250 )
@@ -46,20 +46,19 @@ public class Employee {
     @Column(name = "employee_email", length = 45)
     private String employeeEmail;
 
-    @Type(type = "json")
-    @Column(name = "employee_number", columnDefinition = "json")
-    private ArrayList employeeNumber;
+
+    @Column(name = "employee_number" , length = 12)
+    private int employeeNumber;
 
     @Column(name = "nic", length = 20)
     private String nic;
 
-    @Column(name = "gender", length = 20)
-    private String gender;
+
 
     @Column(name = "business_Type", length = 20)
     private String businessType;
 
-    @Column(name = "business_name", nullable = false)
+    @Column(name = "business_name",length = 100)
     private String businessName;
 
 

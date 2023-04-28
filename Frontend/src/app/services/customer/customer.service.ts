@@ -22,8 +22,16 @@ export class CustomerService {
 
   }
 
+  singleCustomer(customerId:any){
+    return this.http.get('http://localhost:4000/api/v1/employee/getCustomer-by-id?id=' + customerId);
+  }
+
   deleteCustomer(customerId:any ): Observable<Object>{
 
     return this.http.delete(`${this.baseURL}/deleteCustomer/${customerId}`);
+  }
+
+  login(user:any){
+    return this.http.get('http://localhost:4000/api/v1/customer/', user);
   }
 }

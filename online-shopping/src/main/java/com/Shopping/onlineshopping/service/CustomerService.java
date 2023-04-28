@@ -1,9 +1,11 @@
 package com.Shopping.onlineshopping.service;
 
 import com.Shopping.onlineshopping.dto.CustomerDto;
+import com.Shopping.onlineshopping.dto.LoginCustomerDTO;
 import com.Shopping.onlineshopping.dto.paginate.PaginateResponseCustomerDTO;
 import com.Shopping.onlineshopping.dto.request.RequestSaveCustomerDTO;
 import com.Shopping.onlineshopping.dto.request.UpdateCustomerDTO;
+import com.Shopping.onlineshopping.dto.response.LoginResponse;
 import com.Shopping.onlineshopping.dto.response.ResponseSaveCustomerDTO;
 
 import java.util.List;
@@ -13,9 +15,9 @@ public interface CustomerService {
 
   RequestSaveCustomerDTO saveCustomer(RequestSaveCustomerDTO requestSaveCustomerDTO);
 
-  CustomerDto getCustomer(long customerId);
+  CustomerDto getCustomer(int customerId);
 
-  String updateCustomer(long customerId);
+  String updateCustomer(int customerId);
 
 
 
@@ -23,7 +25,7 @@ public interface CustomerService {
 
   List<CustomerDto> getAllCustomer();
 
-  String deleteCustomer(long customerId);
+  String deleteCustomer(int customerId);
 
   List<CustomerDto> getAllCustomerUseActiveState(boolean activeState);
 
@@ -33,4 +35,8 @@ public interface CustomerService {
 
 
   String updates(UpdateCustomerDTO updateCustomerDTO);
+
+    LoginResponse loginEmployee(LoginCustomerDTO loginCustomerDTO);
+
+
 }

@@ -48,5 +48,12 @@ export class EmployeeListComponent implements OnInit {
       this.employee =data;
     })
   }
+  deleteEmployee(employeeId:number){
+    this.employeeService.deleteEmployee(employeeId).subscribe(data=>{
+      console.log(data);
+      this.loadEmployee()
+      this.routes.navigate(['/EmployeeList']);
+    })
+  }
 
 }

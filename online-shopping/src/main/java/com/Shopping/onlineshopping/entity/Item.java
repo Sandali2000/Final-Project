@@ -1,6 +1,6 @@
 package com.Shopping.onlineshopping.entity;
 
-import com.Shopping.onlineshopping.entity.enums.MeasurementUnitType;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,38 +23,38 @@ public class Item {
     @Column(name = "itemName", length = 45, nullable = false)
     private String itemName;
 
-    @Column(name = "shopName", nullable = false)
+    @Column(name = "shopName", length = 45 , nullable = false)
     private String shopName;
 
-    @Column (name = "price", nullable = false)
+    @Column(name = "employeeId", length = 45 , nullable = false)
+    private int employeeId;
+
+    @Column (name = "price", length = 20, nullable = false)
     private double price;
 
-    @Enumerated (EnumType.STRING)
-    @Column (name = "measureType")
-    private MeasurementUnitType measureType;
 
-    @Column (name = "quantity", nullable = false)
+
+    @Column (name = "quantity", length = 100,nullable = false)
     private int quantity;
 
-    @Column (name = "description", nullable = false)
+    @Column (name = "type", length = 100,nullable = false)
+    private String type;
+
+
+    @Column (name = "description",length = 245, nullable = false)
     private String description;
 
-    @Column(name = "image", nullable = false)
+    @Column(name = "image",length = 200, nullable = false)
     private  String  image;
 
     @Column(name = "active_state",columnDefinition = "TINYINT default 0")
     private boolean activeState;
 
+//    @OneToMany(mappedBy="items")
+//    private Set<OrderDetails> orderDetails;
+//
+
     @OneToMany(mappedBy="items")
     private Set<OrderDetails> orderDetails;
-
-
-
-
-
-
-
-
-
 
 }

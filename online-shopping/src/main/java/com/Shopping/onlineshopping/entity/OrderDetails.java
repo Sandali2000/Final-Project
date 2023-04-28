@@ -26,20 +26,32 @@ public class OrderDetails {
     @Column(name = "itemName", length = 45, nullable = false)
     private String itemName;
 
-    @Column (name = "quantity", nullable = false)
+    @Column (name = "quantity",length = 50, nullable = false)
     private int quantity;
 
-    @Column (name = "amount", nullable = false)
+    @Column (name = "amount", length = 100,nullable = false)
     private Double amount;
 
+
+//    @ManyToOne
+//    @JoinColumn(name="item_id", nullable=false)
+//    private Item items;
+//
+//
+//    @ManyToOne
+//    @JoinColumn(name="order_id", nullable=false)
+//    private Orders orders;
+
+
+    @ManyToOne
+    @JoinColumn(name="order_id", nullable=false)
+    private Orders orders;
 
     @ManyToOne
     @JoinColumn(name="item_id", nullable=false)
     private Item items;
 
 
-    @ManyToOne
-    @JoinColumn(name="order_id", nullable=false)
-    private Order orders;
+
 
 }

@@ -12,10 +12,14 @@ import java.util.ArrayList;
 public class UpdateEmployeeDTO {
 
     private String employeeName;
+    private String  userName;
     private String employeePassword;
+    private String  confirmPassword;
     private String employeeAddress;
     private String employeeEmail;
-    private ArrayList employeeNumber;
+    private int employeeNumber;
+    private String businessName;
+    private String businessType;
     private String nic;
 
 }

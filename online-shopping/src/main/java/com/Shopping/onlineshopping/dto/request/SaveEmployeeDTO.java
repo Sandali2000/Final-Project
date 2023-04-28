@@ -15,9 +15,9 @@ public class SaveEmployeeDTO {
     private String  confirmPassword;
     private String employeeAddress;
     private String employeeEmail;
-    private ArrayList employeeNumber;
+    private int employeeNumber;
     private String businessName;
     private String businessType;
     private String nic;
-    private String gender;
+
 }

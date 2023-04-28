@@ -19,10 +19,10 @@ public class Image {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name")
+    @Column(name = "name",length = 200)
     private String name;
 
-    @Column(name = "type")
+    @Column(name = "type", length = 200)
     private String type;
 
     @Column(name = "image", unique = false, nullable = false, length = 100000)

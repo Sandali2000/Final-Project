@@ -3,10 +3,13 @@ package com.Shopping.onlineshopping.service.impl;
 import com.Shopping.onlineshopping.Util.mappers.CustomerMapper;
 import com.Shopping.onlineshopping.dto.CustomerDto;
 import com.Shopping.onlineshopping.dto.ItemDTO;
+import com.Shopping.onlineshopping.dto.LoginCustomerDTO;
 import com.Shopping.onlineshopping.dto.paginate.PaginateResponseCustomerDTO;
 import com.Shopping.onlineshopping.dto.request.RequestSaveCustomerDTO;
 import com.Shopping.onlineshopping.dto.request.UpdateCustomerDTO;
+import com.Shopping.onlineshopping.dto.response.LoginResponse;
 import com.Shopping.onlineshopping.entity.Customer;
+import com.Shopping.onlineshopping.entity.Employee;
 import com.Shopping.onlineshopping.exception.NotFoundException;
 import com.Shopping.onlineshopping.repo.CustomerRepo;
 import com.Shopping.onlineshopping.service.CustomerService;
@@ -15,14 +18,16 @@ import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 
 @Service
-public class CustomerServiceIMPL implements CustomerService {
+public class CustomerServiceIMPL implements CustomerService  {
     @Autowired
     private CustomerRepo customerRepo;
 
@@ -32,7 +37,8 @@ public class CustomerServiceIMPL implements CustomerService {
 
     @Autowired
     private CustomerMapper customerMapper;
-
+//    @Autowired
+//     private PasswordEncoder passwordEncoder;
 
     @Override
     public RequestSaveCustomerDTO saveCustomer(RequestSaveCustomerDTO requestSaveCustomerDTO){
@@ -49,7 +55,7 @@ public class CustomerServiceIMPL implements CustomerService {
     }
 
     @Override
-    public CustomerDto getCustomer(long customerId){
+    public CustomerDto getCustomer(int customerId){
      //   Optional<Customer> customer = customerRepo.findById(customerId);
      //   CustomerDto customerDto= modelMapper.map(customer.get(),CustomerDto.class);
         if(customerRepo.existsById(customerId)){
@@ -70,7 +76,7 @@ public class CustomerServiceIMPL implements CustomerService {
     }
 
     @Override
-    public String updateCustomer(long customerId){
+    public String updateCustomer(int customerId){
         if(customerRepo.existsById(customerId)){
 
         }
@@ -96,6 +102,31 @@ public class CustomerServiceIMPL implements CustomerService {
     }
 
     @Override
+    public LoginResponse loginEmployee(LoginCustomerDTO loginCustomerDTO) {
+        String msg = "";
+        Customer customer1 = customerRepo.findByCustomerEmail(loginCustomerDTO.getCustomerEmail());
+        if (customer1 != null) {
+            String password = loginCustomerDTO.getCustomerPassword();
+            Boolean isPwdRight = password.matches(password);
+            if (isPwdRight) {
+                Optional<Customer> customer = customerRepo.findByCustomerEmailAndCustomerPassword(loginCustomerDTO.getCustomerEmail(), password);
+                if (customer.isPresent()) {
+                    return new LoginResponse("Login Success", true);
+                } else {
+                    return new LoginResponse("Login Failed", false);
+                }
+            } else {
+
+                return new LoginResponse("password Not Match", false);
+            }
+        }else {
+            return new LoginResponse("Email not exits", false);
+        }
+    }
+
+
+
+    @Override
     public List<CustomerDto> getAllCustomer() {
         List<Customer> getAllCustomer = customerRepo.findAll();
 
@@ -104,7 +135,7 @@ public class CustomerServiceIMPL implements CustomerService {
     }
 
     @Override
-    public String deleteCustomer(long customerId) {
+    public String deleteCustomer(int customerId) {
         if(customerRepo.existsById(customerId)){
             customerRepo.deleteById(customerId);
             return  customerId+ " delete successfully";
@@ -146,14 +177,14 @@ public class CustomerServiceIMPL implements CustomerService {
 
     @Override
     public CustomerDto login(String email, String password) {
-        Customer customer= customerRepo.findByCustomerEmailAndCustomerPassword(email,password);
-        if(customer.equals(customer)){
-            CustomerDto customerDto= modelMapper.map(customer,CustomerDto.class);
-            return customerDto;
-        }else {
-            throw new NotFoundException( "Not Found");
-        }
-
+//        Customer customer= customerRepo.findByCustomerEmailAndCustomerPassword(email,password);
+//        if(customer.equals(customer)){
+//            CustomerDto customerDto= modelMapper.map(customer,CustomerDto.class);
+//            return customerDto;
+//        }else {
+//            throw new NotFoundException( "Not Found");
+//        }
+return null;
     }
 
     @Override

@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
+import java.util.Optional;
 
 @EnableJpaRepositories
 @Repository
@@ -13,4 +14,8 @@ import javax.transaction.Transactional;
 public interface EmployeeRepo extends JpaRepository<Employee,Integer> {
 
     Employee findAllByEmployeeNameEquals(String name);
+
+    Employee findByEmployeeEmail(String employeeEmail);
+
+    Optional<Employee> findByEmployeeEmailAndEmployeePassword (String employeeEmail , String employeePassword);
 }

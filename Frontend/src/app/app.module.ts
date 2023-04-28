@@ -60,6 +60,14 @@ import { EmployeeNavComponent } from './Employee/employee-nav/employee-nav.compo
 import { EmployeeHeaderComponent } from './Employee/employee-header/employee-header.component';
 import {MatSelectModule} from "@angular/material/select";
 import { AddEmployeeComponent } from './Employee/add-employee/add-employee.component';
+import { CartComponent } from './Cart-page/cart/cart.component';
+import { EditEmployeeComponent } from './Employee/edit-employee/edit-employee.component';
+import { EmployeeItemComponent } from './Employee/employee-item/employee-item.component';
+import { ItemListByEmployeeComponent } from './Employee/item-list-by-employee/item-list-by-employee.component';
+import { CustomerListByEmployeeComponent } from './Employee/customer-list-by-employee/customer-list-by-employee.component';
+
+import { Item1Component } from './ProductPage/item1/item1.component';
+import { Item2Component } from './ProductPage/item2/item2.component';
 
 @NgModule({
   declarations: [
@@ -99,6 +107,14 @@ import { AddEmployeeComponent } from './Employee/add-employee/add-employee.compo
     EmployeeNavComponent,
     EmployeeHeaderComponent,
     AddEmployeeComponent,
+    CartComponent,
+    EditEmployeeComponent,
+    EmployeeItemComponent,
+    ItemListByEmployeeComponent,
+    CustomerListByEmployeeComponent,
+    Item1Component,
+    Item2Component,
+
 
   ],
     imports: [

@@ -12,45 +12,58 @@ import java.util.Date;
 import java.util.Set;
 
 @Entity
-@Table(name = "order")
+@Table(name = "orders")
 @TypeDefs({
         @TypeDef(name = "json",typeClass = JsonType.class)
 })
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Order {
+
+public class Orders {
 
     @Id
     @Column(name = "order_id",length = 45)
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int orderId;
 
-    @Column(name = "order_date",columnDefinition = "DATETIME")
+    @Column(name = "order_date", columnDefinition = "DATETIME")
     private Date date;
 
-    @Column(name = "total",nullable = false)
+    @Column(name = "total",length = 100,nullable = false)
     private Double total;
 
     @Column(name = "active_state",columnDefinition = "TINYINT default 1")
     private boolean activeState;
 
 
+//    @ManyToOne
+//    @JoinColumn(name="customer_id", nullable=false)
+//    private Customer customer;
+
     @ManyToOne
     @JoinColumn(name="customer_id", nullable=false)
-    private Customer customer;
+    private Customer customers;
 
+
+
+//    @OneToMany(mappedBy="orders")
+//    private Set<OrderDetails> orderDetails;
+//
+//    public Orders(Customer customers, Date date, Double total) {
+//        this.customer = customers;
+//        this.date = date;
+//        this.total = total;
+//    }
 
     @OneToMany(mappedBy="orders")
     private Set<OrderDetails> orderDetails;
 
-    public Order(Customer customers, Date date, Double total) {
-        this.customer = customers;
+
+    public Orders(Customer customers, Date date, Double total) {
+        this.customers = customers;
         this.date = date;
         this.total = total;
     }
-
-
-
 
 }

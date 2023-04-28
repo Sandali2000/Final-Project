@@ -11,7 +11,7 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 public class RequestOrderSaveDTO {
-    private long customer;
+    private int customer;
     private Date date;
     private Double total;
     private List<RequestOrderDetailsSaveDTO> orderDetails;

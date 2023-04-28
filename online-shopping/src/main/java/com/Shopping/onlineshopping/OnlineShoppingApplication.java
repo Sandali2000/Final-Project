@@ -11,10 +11,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 @RestController
 public class OnlineShoppingApplication {
-		@GetMapping("/")
-	public String home(){
-		return "Welcome to AWS..... ";
-	}
+
 
 	public static void main(String[] args) {
 		SpringApplication.run(OnlineShoppingApplication.class, args);

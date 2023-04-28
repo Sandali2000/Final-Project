@@ -25,7 +25,7 @@
   margin-top: 3px;
   border: 0;
   border-radius: 0;
-  background: #07122e;
+  background: rgba(39,48,67,255);
 }
 
 .nav .dropdown-menu a.active {
@@ -36,7 +36,7 @@
 @media (min-width: 768px) {
   .nav,
   .nav .navbar {
-    background: #07122e !important;
+    background: rgba(39,48,67,255) !important;
   }
 
   .nav .navbar-brand {
@@ -51,7 +51,7 @@
 
   .nav .navbar-dark a.nav-link:hover,
   .nav .navbar-dark a.nav-link.active {
-    color:#c2cef0;
+    color:rgba(246,64,16,255);
   }
 }
 
@@ -62,7 +62,7 @@
 
   .nav,
   .nav .navbar {
-    background: #07122e!important;
+    background: rgba(246,64,16,255)!important;
   }
 
   .nav a.nav-link {
@@ -79,7 +79,7 @@ button{
   position: relative;
   top: -5px;
   bottom: 0;
-  background-color: #3c5599;
+  background-color: rgba(39,48,67,255);
   border: 1px solid white;
   color: #ffffff;
   font-size: 14px;
@@ -87,8 +87,8 @@ button{
 
 }
 .button:hover{
-  color: #c7d1ee;
-  background-color:#07122e;
+  color: rgba(246,64,16,255);
+  background-color:rgba(39,48,67,255);
   cursor: pointer;
 }
 

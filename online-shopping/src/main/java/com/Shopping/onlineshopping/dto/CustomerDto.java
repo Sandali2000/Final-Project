@@ -12,7 +12,7 @@ import java.util.ArrayList;
 @Data
 public class CustomerDto {
 
-    private long customerId;
+    private int customerId;
     private String customerName;
     private String customerPassword;
     private String customerEmail;

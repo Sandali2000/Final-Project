@@ -14,12 +14,15 @@ import java.util.ArrayList;
 public class EmployeeDto {
     private int employeeId;
     private String employeeName;
+    private String  userName;
     private String employeePassword;
+    private String  confirmPassword;
     private String employeeAddress;
     private String employeeEmail;
-    private ArrayList employeeNumber;
+    private int employeeNumber;
     private String businessName;
-    private String gender;
+
     private String nic;
+    private String businessType;
     private boolean activeState;
 }

@@ -7,10 +7,11 @@ import java.util.List;
 
 public interface ItemService {
 
+
     RequestSaveItemDTO saveItem(RequestSaveItemDTO requestSaveItemDTO);
 
 
-    List<ItemDTO> getItemByName(String name);
+    List<ItemDTO> getItemByName(String type);
 
     List<ItemDTO> getNotActiveItemByName(String name);
 
@@ -20,4 +21,7 @@ public interface ItemService {
     ItemDTO getById(int itemId);
 
 
+    List<ItemDTO> getItemByEmployee(int employeeId);
+
+    String deleteItem(int itemId);
 }

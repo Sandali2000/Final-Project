@@ -45,12 +45,12 @@
 
 }
 .header .navbar a:hover {
-  color: #4f4fd2;
+  color: rgb(244,69,21);
 }
 
 
 .header .navbar i{
-  color: rgb(4, 4, 68);
+  color: rgba(39,48,67,255);
   width: 20px;
   text-align: center;
   margin-right: 8px;
@@ -58,7 +58,7 @@
 }
 
 .header .navbar a:hover i {
-  color: #4f4fd2;
+  color: rgb(244,69,21);
 }
 
 .header-slider {
@@ -141,7 +141,7 @@
   height: 100%;
   display: flex;
   align-items: center;
-  background: rgba(79, 79, 210, 0.37);;
+  background: rgba(244, 69, 21, 0.37);
   transition: all 0.3s;
   opacity: 0;
 }

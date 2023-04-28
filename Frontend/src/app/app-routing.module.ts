@@ -15,10 +15,19 @@ import {ItemListComponent} from "./Admin/item-list/item-list.component";
 import {EmployeeDashboardComponent} from "./Employee/employee-dashboard/employee-dashboard.component";
 import {AddItemComponent} from "./Employee/add-item/add-item.component";
 import {AddEmployeeComponent} from "./Employee/add-employee/add-employee.component";
+import {CartComponent} from "./Cart-page/cart/cart.component";
+import {EditEmployeeComponent} from "./Employee/edit-employee/edit-employee.component";
+import {ItemListByEmployeeComponent} from "./Employee/item-list-by-employee/item-list-by-employee.component";
+import {CustomerListByEmployeeComponent} from "./Employee/customer-list-by-employee/customer-list-by-employee.component";
+
+import {Item1Component} from "./ProductPage/item1/item1.component";
+import {Item2Component} from "./ProductPage/item2/item2.component";
+import {LoginComponent} from "./Customer/login/login.component";
 
 const routes: Routes = [
   {path:'',component:HomePageComponent},
   {path:'customerLogin',component:CustomerLoginComponent},
+  {path:'LogIn',component:LoginComponent},
   {path:'product',component:ProductComponent},
   {path:'employeeLogin',component:EmployeeLoginComponent},
   {path:'adminLogin',component:AdminLoginComponent},
@@ -28,9 +37,16 @@ const routes: Routes = [
   {path:'EmployeeList',component:EmployeeListComponent},
   {path:'CustomerList',component:CustomerListComponent},
   {path:'ItemList',component:ItemListComponent},
-  {path:'EmployeeDashboard',component:EmployeeDashboardComponent},
-  {path:'AddItem',component:AddItemComponent},
+  {path:'EmployeeDashboard/:employeeId',component:EmployeeDashboardComponent},
+  {path:'AddItem/:employeeId',component:AddItemComponent},
   {path:'AddEmployee',component:AddEmployeeComponent},
+  {path:'cartPage',component:CartComponent},
+  {path:'editEmployee/:employeeId',component:EditEmployeeComponent},
+  {path:'itemByEmployees/:employeeId',component:ItemListByEmployeeComponent},
+  {path:'customerByEmployee/:employeeId',component:CustomerListByEmployeeComponent},
+  {path:'Pottery',component:Item1Component},
+  {path:'cloths',component:Item2Component},
+
 ];
 
 @NgModule({

@@ -3,7 +3,7 @@ export class Item{
     itemName !:string ;
     shopName !: string ;
     price!: number ;
-    measureType!: string ;
+    type!: string ;
     quantity !: string ;
     description !:  string ;
     image !: string ;

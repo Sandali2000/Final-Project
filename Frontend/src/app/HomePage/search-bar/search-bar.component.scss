@@ -11,7 +11,7 @@
 
 .bottom-bar .logo a img {
   height: 80px;
-  width: 250px;
+  width: 80px;
 }
 
 
@@ -26,12 +26,12 @@
 
 .bottom-bar .user .cart i,
 .bottom-bar .user .wishlist i {
-  color: #3f2b07;
+  color: rgba(39,48,67,255);
 }
 
 .bottom-bar .user .cart span,
 .bottom-bar .user .wishlist span {
-  color: #3f2b07;
+  color: rgba(39,48,67,255);
   font-size: 15px;
 }
 
@@ -39,7 +39,7 @@
 .bottom-bar .user .wishlist:hover i,
 .bottom-bar .user .cart:hover span,
 .bottom-bar .user .wishlist:hover span {
-  color:  rgba(232, 169, 8, 0.84);
+  color:  rgba(246,64,16,255);
 }
 
 @media (min-width: 768px) {

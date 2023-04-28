@@ -1,7 +1,13 @@
 <div class="container">
   <div class="content">
 
-    <form >
+    <form [formGroup]="editCustomer">
+
+      <mat-form-field appearance="outline" style="width: 300px">
+        <mat-label>Customer Id</mat-label>
+        <input  type="text" matInput placeholder="Customer Id" formControlName="customerId"  required></mat-form-field>
+
+
       <mat-form-field appearance="outline" style="width: 300px">
         <mat-label>Address</mat-label>
         <input  type="text" matInput placeholder="Address"  required></mat-form-field>
@@ -9,6 +15,18 @@
       <mat-form-field appearance="outline" style="width: 300px">
         <mat-label>Name</mat-label>
         <input  type="text" matInput placeholder="Name"  required></mat-form-field>
+
+      <mat-form-field appearance="outline" style="width: 300px">
+        <mat-label>Name</mat-label>
+        <input  type="text" matInput placeholder="amount"  required></mat-form-field>
+
+      <mat-form-field appearance="outline" style="width: 300px">
+        <mat-label>Name</mat-label>
+        <input  type="text" matInput placeholder="itemName"  required></mat-form-field>
+
+      <mat-form-field appearance="outline" style="width: 300px">
+        <mat-label>Name</mat-label>
+        <input  type="text" matInput placeholder="itemName"  required></mat-form-field>
     </form>
 
 

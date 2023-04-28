@@ -9,12 +9,12 @@
 .product-item .product-title {
   padding: 15px;
   text-align: center;
-  background: #4f4fd2;
+  background: rgba(39,48,67,255);
   transition: all .3s;
 }
 
 .product-item:hover .product-title {
-  background: rgba(97, 123, 255, 0.64);
+  background: rgba(246,64,16,255);
 }
 
 .product-item .product-title a,
@@ -31,7 +31,7 @@
 
 .product-item .product-title .ratting i {
   font-size: 14px;
-  color: rgba(5, 5, 37, 0.76);
+  color: rgba(246,64,16,255);
 }
 
 .product-item .product-content .price span {
@@ -80,7 +80,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(97, 123, 255, 0.42);
+  background: rgba(246, 64, 16, 0.34);
   transition: all .3s;
   font-size: 0;
   z-index: 1;
@@ -100,7 +100,7 @@
   font-size: 16px;
   text-align: center;
   color: #ffffff;
-  background: #040444;
+  background: rgba(39,48,67,255);
   border: 1px solid #ffffff;
   border-radius: 4px;
   transition: all .3s;
@@ -116,19 +116,19 @@
 }
 
 .product-item .product-image .product-action a:hover {
-  color: #040444;
+  color: rgba(246,64,16,255);
   background: #ffffff;
-  border: 1px solid #040444;
+  border: 1px solid rgba(246,64,16,255);
 }
 
 .product-item .product-price {
   padding: 20px;
-  background: #4f4fd2;
+  background: rgba(39,48,67,255);
   transition: all .3s;
 }
 
 .product-item:hover .product-price {
-  background: #040444;
+  background: rgba(246,64,16,255);
 }
 
 .product-item .product-price h3 {
@@ -145,12 +145,12 @@
   float: right;
   border: none;
   color: #ffffff;
-  background: #040444;
+  background: rgba(246,64,16,255);
 }
 
 .product-item:hover .product-price .btn,
 .product-item .product-price .btn:hover {
-  color: #040444;
+  color: rgba(39,48,67,255);
   background: #ffffff;
 }
 
