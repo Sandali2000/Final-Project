@@ -11,7 +11,7 @@ import {HttpClient} from "@angular/common/http";
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  customerEmail:string="";
+  customerName:string="";
   customerPassword:string="";
   customerId:any
   alert:boolean=false
@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
               private routes:Router) { }
 
   ngOnInit(): void {
+
   }
   openDialog1() {
     this.dialog.open(CustomerLoginComponent, {
@@ -32,14 +33,16 @@ export class LoginComponent implements OnInit {
 
 
   login(){
+    console.log(this.customerName);
     console.log(this.customerPassword);
-    console.log(this.customerEmail);
-    console.log(this.customerId)
+
+    //console.log(this.customerId)
 
 
     let bodyData ={
-      customerEmail:this.customerEmail,
+      customerName:this.customerName,
       customerPassword:this.customerPassword,
+      //customerId:this.customerId
 
     };
     this.http.post("http://localhost:4000/api/v1/customer/login", bodyData).subscribe((resultData:any)=>{
@@ -50,7 +53,8 @@ export class LoginComponent implements OnInit {
       }else if(resultData.message == "Login Success"){
         alert("Success Login");
         this.ngOnInit()
-        this.routes.navigate(['/cartPage']);
+        this.routes.navigate(['/check/'+this.customerName]);
+
       }else {
         alert("Incorrect Email or Password")
       }

@@ -39,9 +39,9 @@ public class ItemServiceIMPL implements ItemService {
     }
 
     @Override
-    public List<ItemDTO> getItemByName(String type) {
+    public List<ItemDTO> getItemByName(String itemType) {
         boolean b =true;
-        List<Item> items = itemRepo.findAllByTypeEqualsAndActiveStateEquals(type,b);
+        List<Item> items = itemRepo.findAllByItemTypeEqualsAndActiveStateEquals(itemType,b);
 
         if(items.size()>0){
             List<ItemDTO> itemDTOList= modelMapper.map(items,new TypeToken<List<ItemDTO>>(){}.getType());
@@ -108,6 +108,11 @@ public class ItemServiceIMPL implements ItemService {
             throw new   RuntimeException ("No customer Found ");
         }
 
+    }
+
+    @Override
+    public Long countAllItem() {
+        return itemRepo.count();
     }
 
 

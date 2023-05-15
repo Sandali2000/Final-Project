@@ -30,4 +30,6 @@ public interface EmployeeService {
     String deleteEmployee(int employeeId);
 
     LoginResponse loginEmployee(LoginDTO loginDTO);
+
+    Long countAllCustomer();
 }

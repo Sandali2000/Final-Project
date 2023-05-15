@@ -20,4 +20,11 @@ public class OrderController {
         return  orderService.saveItem(requestOrderSaveDTO);
 
     }
+
+    @GetMapping("/count")
+    public Long countAllOrder(){
+        Long id= orderService.countAllOrder();
+        return id;
+
+    }
 }

@@ -65,4 +65,9 @@ public class OrderServiceIMPL implements OrderService {
         return null;
 
     }
+
+    @Override
+    public Long countAllOrder() {
+        return orderRepo.count();
+    }
 }

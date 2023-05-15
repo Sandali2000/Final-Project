@@ -28,7 +28,7 @@ export class AddItemComponent implements OnInit {
   //   this.selectedTeam = value;
   // }
 
-sideBarOpen = true;
+  sideBarOpen = true;
 
 
   sideBarToggler() {
@@ -40,19 +40,20 @@ sideBarOpen = true;
               private Url:ActivatedRoute,
               private employeeService:EmployeeService) {
     this.addItem = fb.group(
-      {
+        {
 
-        'itemName':  new FormControl(null, Validators.required),
-        'shopName': new  FormControl(null, Validators.required),
-        'employeeId': new  FormControl(null, Validators.required),
-        'description':new FormControl(null,Validators.required ),
-        'image':new FormControl ,
-        'type': new  FormControl(null,Validators.required),
-        'price':new  FormControl(null,Validators.required),
-        'quantity': new FormControl(null,Validators.required)
+          'itemName':  new FormControl(null, Validators.required),
+          'shopName': new  FormControl(null, Validators.required),
+          'employeeId': new  FormControl(null, Validators.required),
+          'description':new FormControl(null,Validators.required ),
+          'image':new FormControl ,
+          'itemType': new  FormControl(null,Validators.required),
+          'date': new  FormControl(null,Validators.required),
+          'price':new  FormControl(null,Validators.required),
+          'quantity': new FormControl(null,Validators.required)
 
 
-      }
+        }
     );
   }
 
@@ -75,7 +76,7 @@ sideBarOpen = true;
       this.itemService.addItem(this.addItem.value).subscribe((data: any) => {
         console.log(data);
         alert('Now You Register')
-       // this.routes.navigate(['/payments']);
+        // this.routes.navigate(['/payments']);
       })
     } else {
       alert('ERROR MESSAGE, Checked Again!!')

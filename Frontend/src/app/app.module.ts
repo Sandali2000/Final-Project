@@ -68,6 +68,15 @@ import { CustomerListByEmployeeComponent } from './Employee/customer-list-by-emp
 
 import { Item1Component } from './ProductPage/item1/item1.component';
 import { Item2Component } from './ProductPage/item2/item2.component';
+import { MyAcountComponent } from './Customer/my-acount/my-acount.component';
+import {NgChartsModule} from "ng2-charts";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import { CalenderComponent } from './Admin/calender/calender.component';
+import {CalendarModule} from "@syncfusion/ej2-angular-calendars";
+import { ProfileComponent } from './Admin/profile/profile.component';
+import { TimeComponent } from './Admin/time/time.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+
 
 @NgModule({
   declarations: [
@@ -114,6 +123,12 @@ import { Item2Component } from './ProductPage/item2/item2.component';
     CustomerListByEmployeeComponent,
     Item1Component,
     Item2Component,
+    MyAcountComponent,
+    CalenderComponent,
+    ProfileComponent,
+    TimeComponent,
+    AboutUsComponent,
+
 
 
   ],
@@ -142,7 +157,11 @@ import { Item2Component } from './ProductPage/item2/item2.component';
         RouterModule,
         CarouselModule,
         CarouselsModule,
-        MatSelectModule
+        MatSelectModule,
+        NgChartsModule,
+        BrowserModule,
+        MatDatepickerModule,
+        CalendarModule
 
     ],
   providers: [],

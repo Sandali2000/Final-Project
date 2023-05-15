@@ -133,6 +133,10 @@ public class EmployeeServiceIMPL implements EmployeeService {
 
     }
 
-
-
+    @Override
+    public Long countAllCustomer() {
+        return employeeRepo.count();
     }
+
+
+}

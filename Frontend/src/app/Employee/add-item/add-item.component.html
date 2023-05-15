@@ -22,6 +22,13 @@
                   <input matInput type="text" required
                          placeholder="Shop Name" formControlName="shopName"/>
                 </mat-form-field>
+
+                  <mat-form-field appearance="outline" style="width: 200px">
+                      <mat-label>Date </mat-label>
+                      <input matInput type="date" required
+                             placeholder="Shop Name" formControlName="date"/>
+                  </mat-form-field>
+
                 <mat-form-field appearance="outline" style="width: 200px">
                   <mat-label>Employee Id </mat-label>
                   <input matInput type="number" required
@@ -38,11 +45,11 @@
                   <input matInput type="number"
                          placeholder="price" formControlName="quantity"/>
                 </mat-form-field>
-                <mat-form-field appearance="outline" style="width: 300px">
-                  <mat-label>Image URL </mat-label>
-                  <input matInput type="text"
-                         placeholder="Image URL" formControlName="image"/>
-                </mat-form-field>
+
+
+
+
+
 
                 <mat-form-field appearance="fill" style="margin: 2px; width: 300px">
 <!--                  <mat-label>Measuring Type</mat-label>-->
@@ -54,21 +61,24 @@
 <!--                    <option value="XS">XS</option>-->
 <!--                    <option value="XXXL">XXXL</option></select>-->
                   <mat-label>Cars</mat-label>
-                  <select matNativeControl required formControlName="type">
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="mercedes">Mercedes</option>
-                    <option value="audi">Audi</option>
+                  <select matNativeControl required formControlName="itemType">
+                    <option value="Pottery">Pottery</option>
+                    <option value="Gift Item">Gift Item</option>
+                    <option value="Food and Beverages">Food & Beverages</option>
+                    <option value="Handicraft">Handicraft</option>
+                    <option value="Leather Product">Leather Product</option>
+                      <option value="Other">Other</option>
                   </select>
 
                 </mat-form-field>
               </div>
-
+                <input type="file" class="file-upload"  onchange="console.log(event.target.files)" formControlName="image">
+                <div>
               <mat-form-field appearance="outline" style="width: 800px ">
                 <mat-label>Comment </mat-label>
                 <textarea  matInput formControlName="description"></textarea>
               </mat-form-field>
-
+          </div>
               <button class="submit-btn" (click)="onSubmit()"> Sing Up </button>
 
             </form></div>

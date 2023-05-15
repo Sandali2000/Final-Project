@@ -1,15 +1,14 @@
 export class Employee {
      employeeId !: number
-     employeeName!: String
-     userName!: String
-      employeePassword!: String
-      confirmPassword!: String
-     employeeAddress!: String
-      employeeEmail!: String
+     employeeName!: string
+     userName!: string
+      employeePassword!: string
+      confirmPassword!: string
+     employeeAddress!: string
+      employeeEmail!: string
      employeeNumber!: number
-      businessName!:String
-
-      nic!:String
-     businessType!:String
+      businessName!:string
+        image!:string
+     businessType!:string
      activeState!: boolean
 }

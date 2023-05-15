@@ -44,6 +44,12 @@ public class CustomerController {
         return customerDto;
     }
 
+    @GetMapping(path = "/getCustomer-by-name", params = "name")
+    public CustomerDto getCustomerByName(@RequestParam(value = "name") String customerName){
+        CustomerDto customerDto =CustomerService.getCustomerByName(customerName);
+        return customerDto;
+    }
+
     @GetMapping(path = "/get-all-customer" )
     public List<CustomerDto> getAllCustomer(){
         List<CustomerDto> allCustomers = CustomerService.getAllCustomer();
@@ -124,6 +130,11 @@ public class CustomerController {
         return ResponseEntity.ok(loginResponse);
     }
 
+    @GetMapping("/count")
+    public Long countAllCustomer(){
+        Long id= CustomerService.countAllCustomer();
+        return id;
 
+    }
 
 }

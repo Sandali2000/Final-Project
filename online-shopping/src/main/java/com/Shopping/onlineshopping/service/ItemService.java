@@ -11,7 +11,7 @@ public interface ItemService {
     RequestSaveItemDTO saveItem(RequestSaveItemDTO requestSaveItemDTO);
 
 
-    List<ItemDTO> getItemByName(String type);
+    List<ItemDTO> getItemByName(String itemType);
 
     List<ItemDTO> getNotActiveItemByName(String name);
 
@@ -24,4 +24,6 @@ public interface ItemService {
     List<ItemDTO> getItemByEmployee(int employeeId);
 
     String deleteItem(int itemId);
+
+    Long countAllItem();
 }

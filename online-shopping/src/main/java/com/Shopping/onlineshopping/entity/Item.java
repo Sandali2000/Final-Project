@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.Set;
 
 @AllArgsConstructor
@@ -26,6 +27,9 @@ public class Item {
     @Column(name = "shopName", length = 45 , nullable = false)
     private String shopName;
 
+    @Column(name = "date", length = 45 , nullable = false)
+    private Date date;
+
     @Column(name = "employeeId", length = 45 , nullable = false)
     private int employeeId;
 
@@ -37,8 +41,8 @@ public class Item {
     @Column (name = "quantity", length = 100,nullable = false)
     private int quantity;
 
-    @Column (name = "type", length = 100,nullable = false)
-    private String type;
+    @Column (name = "itemType", length = 100,nullable = false)
+    private String itemType;
 
 
     @Column (name = "description",length = 245, nullable = false)

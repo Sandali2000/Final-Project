@@ -4,6 +4,9 @@ import {CartItem} from "../../Models/cart/CartItem";
 import {CartService} from "../../services/cart/cart.service";
 import {CustomerLoginComponent} from "../../Customer/customer-login/customer-login.component";
 import {MatDialog} from "@angular/material/dialog";
+import {FormBuilder, FormControl, Validators} from "@angular/forms";
+import {Router} from "@angular/router";
+
 
 @Component({
   selector: 'app-cart',
@@ -12,11 +15,19 @@ import {MatDialog} from "@angular/material/dialog";
 })
 export class CartComponent implements OnInit {
   cart!:Cart;
+  addOrder:any;
   constructor(private cartService:CartService,
-              public dialog: MatDialog) {
+              public dialog: MatDialog,
+              private fb: FormBuilder,
+              private routes: Router,
+              ) {
     this.setCart();
+    this.addOrder = fb.group
+    (    {
+
+    });
   }
-  openDialog() {
+  openDialog1() {
     this.dialog.open(CustomerLoginComponent, {
       width:'450px',
       height:'530px'

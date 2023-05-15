@@ -39,4 +39,7 @@ public interface CustomerService {
     LoginResponse loginEmployee(LoginCustomerDTO loginCustomerDTO);
 
 
+  CustomerDto getCustomerByName(String customerName);
+
+    Long countAllCustomer();
 }

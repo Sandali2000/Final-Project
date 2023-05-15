@@ -19,11 +19,13 @@ public interface CustomerRepo extends JpaRepository<Customer, Integer> {
 
     //Customer findByCustomerEmailAndCustomerPassword(String email, String password);
 
-    Customer findByCustomerName(String customerName);
+  //  Customer findByCustomerName(String customerName);
 
-    Customer findByCustomerEmail(String customerEmail);
+    Customer findByCustomerName(String  customerName);
 
-    Optional<Customer> findByCustomerEmailAndCustomerPassword(String customerEmail, String password);
+    Optional<Customer> findByCustomerNameAndCustomerPassword(String customerEmail, String password);
+
+    Optional<Customer> findByCustomerNameAndActiveStateIsTrue(String customerName);
 
     //Customer findByCustomerName(String customerName);
 }

@@ -11,6 +11,7 @@ import {Item} from "../../Models/item/Item";
   styleUrls: ['./employee-dashboard.component.scss']
 })
 export class EmployeeDashboardComponent implements OnInit {
+
   sideBarOpen = true;
 
   editEmployee:any

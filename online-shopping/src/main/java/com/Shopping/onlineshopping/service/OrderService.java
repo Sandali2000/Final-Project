@@ -8,4 +8,6 @@ public interface OrderService {
 
 
     RequestOrderSaveDTO saveItem(RequestOrderSaveDTO requestOrderSaveDTO);
+
+    Long countAllOrder();
 }

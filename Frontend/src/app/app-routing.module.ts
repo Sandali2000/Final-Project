@@ -23,6 +23,11 @@ import {CustomerListByEmployeeComponent} from "./Employee/customer-list-by-emplo
 import {Item1Component} from "./ProductPage/item1/item1.component";
 import {Item2Component} from "./ProductPage/item2/item2.component";
 import {LoginComponent} from "./Customer/login/login.component";
+import {MyAcountComponent} from "./Customer/my-acount/my-acount.component";
+
+import {ProfileComponent} from "./Admin/profile/profile.component";
+import {AboutUsComponent} from "./about-us/about-us.component";
+
 
 const routes: Routes = [
   {path:'',component:HomePageComponent},
@@ -32,7 +37,7 @@ const routes: Routes = [
   {path:'employeeLogin',component:EmployeeLoginComponent},
   {path:'adminLogin',component:AdminLoginComponent},
   {path:'adminDashboard',component:AdminDashboardComponent},
-  {path:'check',component:ChackOutPageComponent, canActivate:[AuthGuard]},
+  {path:'check/:customerId',component:ChackOutPageComponent, canActivate:[AuthGuard]},
   {path:'productDetail/:itemId',component:ProductDetailsComponent},
   {path:'EmployeeList',component:EmployeeListComponent},
   {path:'CustomerList',component:CustomerListComponent},
@@ -45,6 +50,8 @@ const routes: Routes = [
   {path:'itemByEmployees/:employeeId',component:ItemListByEmployeeComponent},
   {path:'customerByEmployee/:employeeId',component:CustomerListByEmployeeComponent},
   {path:'Pottery',component:Item1Component},
+  {path:'my-account',component:MyAcountComponent},
+  {path:'aboutUs',component:AboutUsComponent},
   {path:'cloths',component:Item2Component},
 
 ];

@@ -34,4 +34,11 @@ export class CustomerService {
   login(user:any){
     return this.http.get('http://localhost:4000/api/v1/customer/', user);
   }
+  singleCustomerByName(customerName:any){
+    return this.http.get('http://localhost:4000/api/v1/customer/getCustomer-by-name?name=' + customerName);
+  }
+
+  count(customerId:any){
+    return this.http.get('http://localhost:4000/api/v1/customer/count', customerId);
+  }
 }

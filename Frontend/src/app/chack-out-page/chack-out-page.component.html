@@ -1,32 +1,42 @@
+<app-navbar></app-navbar>
 <div class="container">
   <div class="content">
+    <div class="row">
+      <div class="column1"><label>
+        Customer Name -: {{customer.customerName}}
+      </label></div>
+      <div class="column"> <label>
+        Customer Id -: {{customer.customerId}}
+      </label></div>
+    </div>
 
-    <form [formGroup]="editCustomer">
 
+
+
+    <h1 >Deliver Details </h1>
+    <form [formGroup]="addDetails" >
+
+      <mat-form-field appearance="outline" style="width: 300px">
+        <mat-label>Customer Name</mat-label>
+        <input  type="text" matInput placeholder="Customer Name" formControlName="customerId"  required></mat-form-field>
       <mat-form-field appearance="outline" style="width: 300px">
         <mat-label>Customer Id</mat-label>
         <input  type="text" matInput placeholder="Customer Id" formControlName="customerId"  required></mat-form-field>
 
+      <mat-form-field appearance="outline" style="width: 300px">
+        <mat-label>Address 1</mat-label>
+        <input  type="text" matInput placeholder="Address" formControlName="adress1" required></mat-form-field>
 
       <mat-form-field appearance="outline" style="width: 300px">
-        <mat-label>Address</mat-label>
-        <input  type="text" matInput placeholder="Address"  required></mat-form-field>
+        <mat-label>Address 2</mat-label>
+        <input  type="text" matInput placeholder="Name" formControlName="adress2" required></mat-form-field>
 
       <mat-form-field appearance="outline" style="width: 300px">
-        <mat-label>Name</mat-label>
-        <input  type="text" matInput placeholder="Name"  required></mat-form-field>
+        <mat-label>Contact Number</mat-label>
+        <input  type="number" matInput placeholder="contact Number" formControlName="contactNumber" required></mat-form-field>
 
-      <mat-form-field appearance="outline" style="width: 300px">
-        <mat-label>Name</mat-label>
-        <input  type="text" matInput placeholder="amount"  required></mat-form-field>
+      <button class="submit"> Submit </button>
 
-      <mat-form-field appearance="outline" style="width: 300px">
-        <mat-label>Name</mat-label>
-        <input  type="text" matInput placeholder="itemName"  required></mat-form-field>
-
-      <mat-form-field appearance="outline" style="width: 300px">
-        <mat-label>Name</mat-label>
-        <input  type="text" matInput placeholder="itemName"  required></mat-form-field>
     </form>
 
 

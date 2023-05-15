@@ -13,7 +13,9 @@ import {Customer} from "../Models/customer/customer";
 export class ChackOutPageComponent implements OnInit {
   order:OrdersModule = new OrdersModule();
   customerId !: any
+  customerName:any
   customer !: any
+  addDetails:any
   editCustomer:any
   constructor(private  customerService:CustomerService,
               private Url:ActivatedRoute,
@@ -21,12 +23,11 @@ export class ChackOutPageComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.customerId =this.Url.snapshot.params['employeeId'];
+    this.customerId =this.Url.snapshot.params['customerId'];
     console.log(this.customerId);
 
     this.customer = new Customer();
-    this.customerService.singleCustomer(this.customerId).subscribe(data=>{
-      this.editCustomer.patchValue(data);
+    this.customerService.singleCustomerByName(this.customerId).subscribe(data=>{
       this.customer = data;
     });
 

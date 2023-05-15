@@ -2,6 +2,7 @@ package com.Shopping.onlineshopping.service.impl;
 
 import com.Shopping.onlineshopping.Util.mappers.CustomerMapper;
 import com.Shopping.onlineshopping.dto.CustomerDto;
+import com.Shopping.onlineshopping.dto.EmployeeDto;
 import com.Shopping.onlineshopping.dto.ItemDTO;
 import com.Shopping.onlineshopping.dto.LoginCustomerDTO;
 import com.Shopping.onlineshopping.dto.paginate.PaginateResponseCustomerDTO;
@@ -104,12 +105,12 @@ public class CustomerServiceIMPL implements CustomerService  {
     @Override
     public LoginResponse loginEmployee(LoginCustomerDTO loginCustomerDTO) {
         String msg = "";
-        Customer customer1 = customerRepo.findByCustomerEmail(loginCustomerDTO.getCustomerEmail());
+        Customer customer1 = customerRepo.findByCustomerName(loginCustomerDTO.getCustomerName());
         if (customer1 != null) {
             String password = loginCustomerDTO.getCustomerPassword();
             Boolean isPwdRight = password.matches(password);
             if (isPwdRight) {
-                Optional<Customer> customer = customerRepo.findByCustomerEmailAndCustomerPassword(loginCustomerDTO.getCustomerEmail(), password);
+                Optional<Customer> customer = customerRepo.findByCustomerNameAndCustomerPassword(loginCustomerDTO.getCustomerName(), password);
                 if (customer.isPresent()) {
                     return new LoginResponse("Login Success", true);
                 } else {
@@ -124,6 +125,20 @@ public class CustomerServiceIMPL implements CustomerService  {
         }
     }
 
+    @Override
+    public CustomerDto getCustomerByName(String customerName) {
+
+        Optional<Customer> customer = customerRepo.findByCustomerNameAndActiveStateIsTrue(customerName);
+       CustomerDto customerDto = modelMapper.map(customer.get(), CustomerDto.class);
+       
+        return customerDto;
+
+    }
+
+    @Override
+    public Long countAllCustomer() {
+        return    customerRepo.count();
+    }
 
 
     @Override

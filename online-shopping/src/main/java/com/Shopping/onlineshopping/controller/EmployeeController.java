@@ -99,5 +99,11 @@ public class EmployeeController {
         return ResponseEntity.ok(loginResponse);
     }
 
+    @GetMapping("/count")
+    public Long countAllEmployee(){
+        Long id= employeeService.countAllCustomer();
+        return id;
+
+    }
 
 }
