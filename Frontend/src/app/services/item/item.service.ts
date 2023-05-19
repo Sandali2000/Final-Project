@@ -27,4 +27,8 @@ export class ItemService {
   deleteItem(itemId:any ): Observable<Object>{
     return this.http.delete(`${this.baseURL}/deleteItem/${itemId}`);
   }
+
+  count(){
+    return this.http.get('http://localhost:4000/api/v1/item/count')
+  }
 }

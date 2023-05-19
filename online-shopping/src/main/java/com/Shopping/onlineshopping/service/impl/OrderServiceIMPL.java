@@ -21,6 +21,8 @@ import java.util.List;
 @Transactional
 public class OrderServiceIMPL implements OrderService {
 
+    private static final String KEY="";
+
     @Autowired
     private OrderRepo orderRepo;
 
@@ -69,5 +71,10 @@ public class OrderServiceIMPL implements OrderService {
     @Override
     public Long countAllOrder() {
         return orderRepo.count();
+    }
+
+    @Override
+    public void createTransaction(Double amount) {
+
     }
 }

@@ -30,8 +30,8 @@ public class Orders {
     @Column(name = "order_date", columnDefinition = "DATETIME")
     private Date date;
 
-    @Column(name = "total",length = 100,nullable = false)
-    private Double total;
+    @Column(name = "amount",length = 100,nullable = false)
+    private Double amount;
 
     @Column(name = "active_state",columnDefinition = "TINYINT default 1")
     private boolean activeState;
@@ -60,10 +60,10 @@ public class Orders {
     private Set<OrderDetails> orderDetails;
 
 
-    public Orders(Customer customers, Date date, Double total) {
+    public Orders(Customer customers, Date date, Double amount) {
         this.customers = customers;
         this.date = date;
-        this.total = total;
+        this.amount = amount;
     }
 
 }

@@ -34,5 +34,9 @@ export class EmployeeService {
     return this.http.put(`${this.baseURL}/employees/${employeeId}`, employee);
   }
 
+  count(){
+    return this.http.get('http://localhost:4000/api/v1/employee/count')
+  }
+
 
 }

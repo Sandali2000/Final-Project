@@ -12,6 +12,8 @@ export class ProductPageComponent implements OnInit {
   product:any
   totalLength:any;
   page:number =1;
+  searchText:any;
+
   constructor(private productService:ProductService,
               private rout:ActivatedRoute) { }
 

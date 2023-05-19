@@ -66,7 +66,7 @@
 <!--          </label>-->
 
 
-          <div class="businessDetails">
+          <div class="input-box">
 <!--          <label for="membership" class="details">Choose a Business Type:</label>-->
 <!--          <select name="membership" id="membership" style="width: 130px; margin: 15px; height: 35px" formControlName="businessType">-->
 <!--            <option value="free">Free</option>-->
@@ -75,15 +75,15 @@
 <!--            <option value="Gold">Gold</option>-->
 <!--          </select>-->
 
-          <mat-form-field appearance="fill">
-            <mat-label >Choose a Business Type:</mat-label>
-            <mat-select [(value)]="selected" formControlName="businessType">
-              <mat-option>None</mat-option>
-              <mat-option value="option1">Option 1</mat-option>
-              <mat-option value="option2">Option 2</mat-option>
-              <mat-option value="option3">Option 3</mat-option>
-            </mat-select>
-          </mat-form-field>
+            <mat-label>Business Type</mat-label>
+            <select matNativeControl required formControlName="businessType">
+              <option value="Pottery">Cloths</option>
+              <option value="Gift Item">Gift Item</option>
+              <option value="Food and Beverages">Food </option>
+              <option value="Handicraft">Handicraft</option>
+              <option value="Leather Product">Leather Product</option>
+              <option value="Other">Other</option>
+            </select>
       </div>
   </div>
 

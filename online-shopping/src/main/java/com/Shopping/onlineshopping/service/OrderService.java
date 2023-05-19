@@ -10,4 +10,6 @@ public interface OrderService {
     RequestOrderSaveDTO saveItem(RequestOrderSaveDTO requestOrderSaveDTO);
 
     Long countAllOrder();
+
+    void createTransaction(Double amount);
 }

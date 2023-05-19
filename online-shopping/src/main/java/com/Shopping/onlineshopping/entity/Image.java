@@ -17,7 +17,7 @@ public class Image {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long Id;
 
     @Column(name = "name",length = 200)
     private String name;
@@ -25,6 +25,12 @@ public class Image {
     @Column(name = "type", length = 200)
     private String type;
 
-    @Column(name = "image", unique = false, nullable = false, length = 100000)
-    private byte[] image;
+    @Column(name = "pic_byte", unique = false, nullable = false, length = 50000000)
+    private byte[] picByte;
+
+    public Image(String name, String type, byte[] picByte) {
+        this.name = name;
+        this.type = type;
+        this.picByte = picByte;
+    }
 }

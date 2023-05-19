@@ -27,4 +27,9 @@ public class OrderController {
         return id;
 
     }
+    @GetMapping({"/createTransaction/{amount}"})
+    public void createTransaction(@PathVariable(name = "amount") Double amount){
+         orderService.createTransaction(amount);
+         return;
+    }
 }

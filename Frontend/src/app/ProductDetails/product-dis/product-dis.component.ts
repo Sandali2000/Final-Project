@@ -12,6 +12,7 @@ import {Review} from "../../Models/review/Review";
 })
 export class ProductDisComponent implements OnInit {
   itemId !:number
+
   item!: any
   name:any
   newRating:any

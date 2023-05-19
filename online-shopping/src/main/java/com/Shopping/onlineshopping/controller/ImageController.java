@@ -31,7 +31,7 @@ public class ImageController {
         imageRepo.save(Image.builder()
                 .name(file.getOriginalFilename())
                 .type(file.getContentType())
-                .image(ImageUtility.compressImage(file.getBytes())).build());
+                .picByte(ImageUtility.compressImage(file.getBytes())).build());
         return ResponseEntity.status(HttpStatus.OK)
                 .body(new ImageUploadResponse("Image uploaded successfully: " +
                         file.getOriginalFilename()));
@@ -45,7 +45,7 @@ public class ImageController {
         return Image.builder()
                 .name(dbImage.get().getName())
                 .type(dbImage.get().getType())
-                .image(ImageUtility.decompressImage(dbImage.get().getImage())).build();
+                .picByte(ImageUtility.decompressImage(dbImage.get().getPicByte())).build();
     }
     @GetMapping(path = {"/get/image/{name}"})
     public ResponseEntity<byte[]> getImage(@PathVariable("name") String name) throws IOException {
@@ -55,7 +55,7 @@ public class ImageController {
         return ResponseEntity
                 .ok()
                 .contentType(MediaType.valueOf(dbImage.get().getType()))
-                .body(ImageUtility.decompressImage(dbImage.get().getImage()));
+                .body(ImageUtility.decompressImage(dbImage.get().getPicByte()));
     }
 
 }

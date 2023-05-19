@@ -18,8 +18,12 @@ interface Type {
 export class AddItemComponent implements OnInit {
   item:any;
   addItem:any
+    selectedFile: any;
+    onFileSelected(event: any) {
+        this.selectedFile = event.target.files[0];
+    }
 
-  employeeId !:number
+    employeeId !:number
   employee!: any
   files:any
 
@@ -46,7 +50,7 @@ export class AddItemComponent implements OnInit {
           'shopName': new  FormControl(null, Validators.required),
           'employeeId': new  FormControl(null, Validators.required),
           'description':new FormControl(null,Validators.required ),
-          'image':new FormControl ,
+            'image':new FormControl(),
           'itemType': new  FormControl(null,Validators.required),
           'date': new  FormControl(null,Validators.required),
           'price':new  FormControl(null,Validators.required),
@@ -71,7 +75,10 @@ export class AddItemComponent implements OnInit {
 
 
   onSubmit() {
+
     if (this.addItem.valid) {
+        const formData = new FormData();
+        formData.append('image', this.selectedFile);
       console.log(this.addItem.value);
       this.itemService.addItem(this.addItem.value).subscribe((data: any) => {
         console.log(data);

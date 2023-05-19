@@ -41,11 +41,13 @@ export class CartComponent implements OnInit {
 
   setCart(){
     this.cart=this.cartService.getCart();
+    console.log(this.cartService.getCart())
   }
 
   removeFromCart(cartItem: CartItem){
     this.cartService.removeFromCart((cartItem.item.itemId));
     this.setCart();
+    console.log(cartItem)
   }
 
   changeQuantity(cartItem: CartItem, quantityInString:string){

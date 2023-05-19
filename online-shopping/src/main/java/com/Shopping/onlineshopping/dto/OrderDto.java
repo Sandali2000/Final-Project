@@ -13,6 +13,6 @@ public class OrderDto {
 
     private int orderId;
     private Date date;
-    private Double total;
+    private Double amount;
     private boolean activeState;
 }

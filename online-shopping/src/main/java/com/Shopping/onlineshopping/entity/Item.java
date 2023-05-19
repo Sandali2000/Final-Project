@@ -61,4 +61,15 @@ public class Item {
     @OneToMany(mappedBy="items")
     private Set<OrderDetails> orderDetails;
 
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(name = "product_images",
+        joinColumns = {
+            @JoinColumn(name = "item_id")
+        },
+            inverseJoinColumns = {
+            @JoinColumn(name = "id")
+            }
+    )
+    private Set<Image> productImage;
+
 }

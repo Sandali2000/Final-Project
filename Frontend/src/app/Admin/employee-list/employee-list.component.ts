@@ -15,7 +15,11 @@ export class EmployeeListComponent implements OnInit {
   page: number = 1;
 
   length: any;
+  isActive = false;
 
+  toggleActiveState() {
+    this.isActive = !this.isActive;
+  }
   sideBarToggler() {
     this.sideBarOpen = !this.sideBarOpen;
   }

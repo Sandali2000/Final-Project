@@ -8,7 +8,7 @@
               <div class="row">
                 <div class="col-md-4">
                   <div class="product-search">
-                    <input type="email" value="Search">
+                    <input type="text"  [(ngModel)]="searchText"  placeholder="Search" value="Search">
                     <button><i class="fa fa-search"></i></button>
                   </div>
                 </div>
@@ -48,7 +48,7 @@
           </div>
 
           <ul class="listItem">
-            <li class="items" *ngFor="let product of product | paginate:{itemsPerPage:6, currentPage:page, totalItems:totalLength}" >
+            <li class="items" *ngFor="let product of product|filter:searchText | paginate:{itemsPerPage:6, currentPage:page, totalItems:totalLength}" >
 
 
               <div class="product-item">
@@ -83,7 +83,7 @@
             </li>
           </ul>
         </div>
-
+        <pagination-controls class="text-center" (pageChange)="page = $event" ></pagination-controls>
 
       </div>
 
@@ -126,9 +126,35 @@
                 </div>
               </div>
               <div class="product-image">
-                <a href="product-detail.html">
-                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSI3hLz0UEhp8WIXBakcVz4pHtWeoyMOdqeg&usqp=CAU" alt="Product Image">
-                </a>
+
+                  <img src="https://assets.thehansindia.com/h-upload/2021/06/12/1600x960_1081751-ongc.jpg" alt="Product Image">
+
+                <div class="product-action">
+                  <a href="#"><i class="fa fa-cart-plus"></i></a>
+                  <a href="#"><i class="fa fa-heart"></i></a>
+                  <a href="#"><i class="fa fa-search"></i></a>
+                </div>
+              </div>
+              <div class="product-price">
+                <h3><span>$</span>99</h3>
+                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
+              </div>
+            </div></ng-template>
+            <ng-template carouselSlide  ><div class="product-item">
+              <div class="product-title">
+                <a href="#">Product Name</a>
+                <div class="ratting">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                </div>
+              </div>
+              <div class="product-image">
+
+                  <img src="https://www.affordable.pk/uploads/products/thumbs/large_16750680250_Tutu_Dress_kids_Girls.jpg" alt="Product Image">
+
                 <div class="product-action">
                   <a href="#"><i class="fa fa-cart-plus"></i></a>
                   <a href="#"><i class="fa fa-heart"></i></a>
@@ -153,33 +179,7 @@
               </div>
               <div class="product-image">
                 <a href="product-detail.html">
-                  <img src="img/product-9.jpg" alt="Product Image">
-                </a>
-                <div class="product-action">
-                  <a href="#"><i class="fa fa-cart-plus"></i></a>
-                  <a href="#"><i class="fa fa-heart"></i></a>
-                  <a href="#"><i class="fa fa-search"></i></a>
-                </div>
-              </div>
-              <div class="product-price">
-                <h3><span>$</span>99</h3>
-                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
-              </div>
-            </div></ng-template>
-            <ng-template carouselSlide  ><div class="product-item">
-              <div class="product-title">
-                <a href="#">Product Name</a>
-                <div class="ratting">
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                </div>
-              </div>
-              <div class="product-image">
-                <a href="product-detail.html">
-                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSI3hLz0UEhp8WIXBakcVz4pHtWeoyMOdqeg&usqp=CAU" alt="Product Image">
+                  <img src="https://5.imimg.com/data5/SELLER/Default/2021/9/OP/QX/WO/2985467/kids-fancy-frock-design-1000x1000.jpg" alt="Product Image">
                 </a>
                 <div class="product-action">
                   <a href="#"><i class="fa fa-cart-plus"></i></a>

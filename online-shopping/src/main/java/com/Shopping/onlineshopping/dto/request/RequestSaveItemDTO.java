@@ -21,4 +21,5 @@ public class RequestSaveItemDTO {
     private int quantity;
     private String description;
     private String image;
+
 }

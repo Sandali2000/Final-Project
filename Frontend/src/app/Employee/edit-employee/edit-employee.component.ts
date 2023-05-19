@@ -42,13 +42,15 @@ employeeId:any
     console.log(this.employeeId);
     this.employeeService.singleEmployee(this.employeeId).subscribe(data=>{
       this.editEmployee.patchValue(data);
-      console.log(data)
+
     })
   }
 
   onSubmit() {
-    this.employeeService.updateEmployee(this.employeeId, this.editEmployee).subscribe(data =>{
-      console.log(data)
+    console.log(this.editEmployee.value)
+    this.employeeService.updateEmployee(this.employeeId, this.editEmployee.value).subscribe((data: any) => {
+      console.log(data);
+      this.routes.navigate(['/EmployeeList']);
     }, error => console.log(error));
   }
   goToEmployeeList(){
